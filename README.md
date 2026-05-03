@@ -6,7 +6,7 @@ The dataset was developed to support garment-level analysis of textile sorting c
 
 Product URLs were first collected within a concentrated time window for each retailer-region website, defining the assortment before detailed product information was extracted. All harmonized records retained two timestamps: the time when the product URL was collected and the time when the corresponding product details were scraped. URL collection occurred between 24 and 26 March 2026, while product-detail scraping was completed between 24 March and 8 April 2026.
 
-The analytical unit was defined as the colour-specific garment variant rather than the original product-page record. This was especially important for Uniqlo, where one product page could contain multiple colour variants and, in some cases, variant-specific composition information.
+The basic data unit (each visible line in final jsonl data file) was defined as the colour-specific garment variant rather than the original product-page record. This was especially important for Uniqlo, where one product page could contain multiple colour variants and, in some cases, variant-specific composition information.
 
 The final dataset file is:
 
