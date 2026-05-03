@@ -36,6 +36,7 @@ This file contains **47,522 colour-specific garment variants** and is the direct
 - [Relationship to sorting and preprocessing analyses](#relationship-to-sorting-and-preprocessing-analyses)
 - [Public-release curation](#public-release-curation)
 - [Limitations](#limitations)
+- [Acknowledgements](#Acknowledgements)
 - [Ethics statement](#ethics-statement)
 - [Recommended citation](#recommended-citation)
 - [License](#license)
@@ -699,6 +700,12 @@ The normalized material, category, and component fields are rule-based analytica
 The dataset represents a fixed online product assortment defined by the URL-collection and product-detail scraping timestamps. Product pages may have changed after the recorded scrape dates.
 
 The dataset supports reproducible assessment of potential sorting and preprocessing barriers, but it does not directly measure industrial sorting outcomes, preprocessing efficiency, or realized fibre-to-fibre recycling performance.
+
+## Acknowledgements
+
+This research was supported by the Werner Siemens Foundation through the WSS Research Centre Catalaix, a Project of the Century funded by the Werner Siemens Foundation.
+
+The dataset was prepared by Dr. Kai Li at the Chair of Operations Management, RWTH Aachen University, with academic guidance from Prof. Grit Walther.
 
 ## Ethics statement
 
