@@ -754,8 +754,8 @@ Please replace the DOI above with the DOI assigned to the archived Zenodo releas
 
 ## License
 
-Dataset files, derived tables, documentation, and metadata are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0), unless otherwise stated.
+Source code and scripts are licensed under the MIT License. See `LICENSE`.
 
-Source code and scripts are licensed under the MIT License.
+Dataset files, derived tables, documentation, and metadata are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0), unless otherwise stated. See `LICENSE-DATA.md`.
 
 The dataset was derived from publicly accessible retailer product-page information. The public release does not redistribute product images, screenshots, raw HTML, review text, or full webpage captures. The above licenses apply only to the curated dataset, documentation, and code included in this repository and the associated Zenodo release.
