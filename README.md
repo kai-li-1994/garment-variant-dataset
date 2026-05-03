@@ -705,7 +705,7 @@ The dataset supports reproducible assessment of potential sorting and preprocess
 
 This research was supported by the Werner Siemens Foundation through the WSS Research Centre Catalaix, a Project of the Century funded by the Werner Siemens Foundation.
 
-The dataset was prepared by Dr. Kai Li at the Chair of Operations Management, RWTH Aachen University, with academic guidance from Prof. Grit Walther.
+The dataset was prepared by [Dr. Kai Li](https://www.om.rwth-aachen.de/gruppenleitung/kai-li/) at the Chair of Operations Management, RWTH Aachen University, with academic guidance from [Prof. Grit Walther](https://www.om.rwth-aachen.de/lehrstuhlleitung/prof-dr-grit-walther/?setlang=en).
 
 ## Ethics statement
 
