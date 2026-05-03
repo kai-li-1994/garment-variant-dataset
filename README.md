@@ -136,7 +136,6 @@ The complete archived release of this dataset will be deposited on Zenodo.
 
 ```text
 Repository: Zenodo
-Data identification number: To be added
 DOI: 10.5281/zenodo.20006389
 Direct URL: https://doi.org/10.5281/zenodo.20006389
 ```
