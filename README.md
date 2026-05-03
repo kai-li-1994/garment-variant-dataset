@@ -12,8 +12,6 @@ The final dataset file is:
 
 This file contains **47,522 colour-specific garment variants** and is the direct input used for the associated sorting and preprocessing/disruptor analyses.
 
----
-
 ## Repository purpose
 
 This repository documents how raw retailer product-page records were transformed into a harmonized, analysis-ready garment dataset.
@@ -28,8 +26,6 @@ The repository is intended to support:
 - reproducible use of retailer web data for textile circularity research.
 
 The repository provides a curated research dataset. It is **not** a redistribution or mirror of retailer webpages.
-
----
 
 ## Dataset overview
 
@@ -46,8 +42,6 @@ The geographic scope covers retailer websites in:
 The dataset includes men’s, women’s, and children’s clothing. The analytical unit is the **colour-specific garment variant**, rather than the original product-page record.
 
 This unit was chosen because colour, material composition, and product details can differ across variants of the same nominal product. These differences are relevant for sorting and recycling analysis, especially where colour or component-level composition influences the interpretation of a garment.
-
----
 
 ## Final dataset
 
@@ -66,8 +60,6 @@ The final dataset contains:
 ```
 
 The final records include harmonized product metadata, normalized material text, normalized garment categories, and structured component-level composition information.
-
----
 
 ## Data-processing workflow
 
@@ -90,8 +82,6 @@ The scripts are numbered according to this workflow:
 5_JSONL_category_normalization.py
 6_JSONL_component_normalization.py
 ```
-
----
 
 ## Step 1: Minimum-information filtering
 
@@ -124,8 +114,6 @@ Summary:
 | Uniqlo AU | 1,104 | 1 | 1,103 |
 | Uniqlo UK | 1,490 | 0 | 1,490 |
 | **Total** | **47,834** | **264** | **47,570** |
-
----
 
 ## Step 2: Uniqlo colour-variant expansion
 
@@ -170,8 +158,6 @@ The field `composition_assignment_type` records how material composition was ass
 | `unresolved_colour_mapping` | Colour-specific mapping could not be resolved; these rows were removed |
 | `unresolved_mapping` | General mapping could not be resolved; these rows were removed |
 
----
-
 ## Step 3: Cross-retailer schema harmonization
 
 Cleaned H&M records and expanded Uniqlo records were harmonized into a common JSONL schema.
@@ -195,8 +181,6 @@ The harmonized dataset contained **51,994 variant-level records**.
 | **Total** | **51,994** |
 
 The increase from 47,570 cleaned product records to 51,994 harmonized variant-level records occurs because Uniqlo product-page records were expanded into colour-specific garment variants.
-
----
 
 ## Step 4: Material-name normalization
 
@@ -239,8 +223,6 @@ Examples of material-name harmonization include analytically equivalent or synon
 | viscose, rayon | viscose-equivalent category |
 
 The purpose of this step was to improve consistency for subsequent category, component, sorting-rule, and disruptor-rule analyses while preserving the original retailer-disclosed material text.
-
----
 
 ## Step 5: Category normalization and scope filtering
 
@@ -302,8 +284,6 @@ After category normalization and scope filtering, **48,244 garment-variant recor
 | `bottoms` | 12,172 |
 | `overall` | 7,836 |
 | `underwear` | 6,051 |
-
----
 
 ## Step 6: Component normalization and consistency filtering
 
@@ -414,8 +394,6 @@ The final dataset contains **68,427 component occurrences**.
 
 All retained component occurrences were matched by exact component-normalization rules.
 
----
-
 ## Dataset-size summary
 
 | Step | Input records | Removed / unresolved records | Output records | Main purpose |
@@ -428,8 +406,6 @@ All retained component occurrences were matched by exact component-normalization
 | Category normalization and scope filtering | 51,994 | 3,750 removed | 48,244 | Assign harmonized garment categories and remove out-of-scope records |
 | Component normalization and consistency filtering | 48,244 | 722 removed | 47,522 | Parse component-level composition and remove inconsistent records |
 | Final analysis dataset | 47,522 | — | 47,522 | Direct input for sorting and preprocessing analyses |
-
----
 
 ## Key fields in the final dataset
 
@@ -460,8 +436,6 @@ All retained component occurrences were matched by exact component-normalization
 | `parent_category` | Harmonized parent garment category |
 | `components_structured` | Parsed and normalized component-level material-composition records |
 
----
-
 ## Relationship to sorting and preprocessing analyses
 
 The final file:
@@ -477,8 +451,6 @@ The sorting-compatibility analysis uses normalized material, colour, category, a
 The preprocessing/disruptor analysis uses the same final dataset to identify garment features that may complicate preprocessing and fibre-to-fibre recycling, including hardware, trims, decorative or non-textile attachments, surface coatings or prints, linings, multilayer structures, and secondary components.
 
 Study-specific rule outputs are generated from the final component-normalized dataset rather than from the raw scraped records.
-
----
 
 ## Public-release curation
 
@@ -499,8 +471,6 @@ The public release does not redistribute:
 
 Long-form retailer marketing descriptions may be minimized or transformed into derived feature evidence in public-release versions, depending on the release package. The internal working pipeline retains raw text fields where needed for reproducibility, rule debugging, and validation.
 
----
-
 ## Limitations
 
 This dataset is based on information disclosed on retailer product pages. It should not be interpreted as a physical teardown dataset.
@@ -513,8 +483,6 @@ The dataset represents a fixed online product assortment defined by the URL-coll
 
 The dataset supports reproducible assessment of potential sorting and preprocessing barriers, but it does not directly measure industrial sorting outcomes, preprocessing efficiency, or realized fibre-to-fibre recycling performance.
 
----
-
 ## Recommended citation
 
 If you use this dataset or code, please cite the archived release:
@@ -524,8 +492,6 @@ Li, Y., [co-authors]. (2026). Harmonized garment-variant dataset for textile sor
 ```
 
 Please replace the DOI above with the DOI assigned to the archived Zenodo release.
-
----
 
 ## License
 
