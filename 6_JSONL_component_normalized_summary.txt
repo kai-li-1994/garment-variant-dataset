@@ -1,0 +1,354 @@
+JSONL component normalization summary
+
+Input file: 5_JSONL_category_normalized.jsonl
+Output file: 6_JSONL_component_normalized.jsonl
+Component-name summary table file: 6_component_name_summary_table.csv
+Component rule mapping table file: 6_component_rule_mapping_table.csv
+
+Row filtering summary
+============================================================
+Processed non-empty input lines: 48244
+Bad JSON lines skipped: 0
+Dropped rows: skipped_scope = 0
+Dropped rows: no_material_text = 4
+Dropped rows: over_100 = 718
+Blocks with pct_sum > 102: 718
+Final written JSON lines: 47522
+Total removed before final output: 722
+Consistency check (expected final lines): 47522
+
+Status counts (kept + dropped-status logic)
+============================================================
+parsed: 47522
+dropped_over_100: 718
+no_material_text: 4
+
+Component summary for retained rows
+============================================================
+Total component occurrences: 68427
+
+Component class counts
+------------------------------------------------------------
+surface_component: 48573
+lining_component: 9621
+pocket_component: 4786
+trim_component: 2673
+panel_component: 1348
+filling_component: 876
+other_component: 375
+decoration_component: 175
+
+Normalized component name counts
+------------------------------------------------------------
+main: 29461
+shell: 16392
+lining: 8369
+pocket_lining: 4432
+body: 2215
+rib: 1069
+padding: 646
+lace: 519
+cup_lining: 404
+waist: 365
+bottom_panel: 320
+hood_lining: 267
+coating: 241
+top_panel: 222
+back_panel: 210
+sleeve_lining: 202
+inner_layer: 195
+mesh: 194
+pocket: 192
+collar: 179
+crotch: 170
+filling: 157
+face: 144
+pocket_fabric: 134
+body_lining: 122
+front_panel: 120
+base_fabric: 108
+binder_part: 100
+cuff: 100
+elastic_part: 87
+embroidery: 85
+tape: 77
+details: 73
+body_filling: 62
+wing: 62
+pattern_area: 44
+belt: 43
+hood: 42
+sleeves: 42
+other: 40
+petticoat: 39
+trim: 36
+binding: 29
+woven_part: 28
+chest_pocket_fabric: 26
+hem: 24
+panel: 23
+knit_part: 22
+inner_support: 21
+side_panel: 17
+upper_part: 17
+other fabric: 15
+inside_panel: 15
+frill: 15
+tulle: 15
+elastic: 15
+inner_pants: 12
+outer_layer: 12
+middle layer: 12
+sleeve: 11
+strap: 11
+piping: 9
+storage_bag: 9
+upper_body_filling: 7
+skirt: 6
+interlining: 6
+flock_part: 6
+hood_edge: 6
+application: 6
+fringe: 5
+elastic section: 5
+front_body_lining: 4
+under_body_filling: 4
+net: 4
+panels: 4
+sock: 4
+shirring_part: 3
+faux_fur: 3
+upper: 3
+lower: 3
+decorating_thread: 2
+patch_pocket: 2
+skirt_lining: 1
+brown: navy: 1
+green: 1
+detail: 1
+elastic ribs: 1
+
+Top raw component paths
+------------------------------------------------------------
+main: 29439
+Shell: 16315
+Lining: 7139
+Pocket lining: 2656
+Body: 2107
+Pocket Lining: 1337
+Rib: 1043
+Crotch lining: 810
+Padding: 646
+Lace: 515
+Waist: 353
+Coating: 241
+Hood lining: 228
+Cup lining: 219
+Back: 210
+Neck lining: 208
+Top: 202
+Mesh: 194
+Pocket: 192
+Cup ( Inner Lining ): 185
+Bottom part: 181
+Crotch: 170
+Sleeve lining: 170
+Pocket Lining: Outer Layer: 167
+Collar: 159
+Filling: 157
+Face: 135
+Front: 120
+Inner layer: 117
+Bottom: 114
+Pocket Lining: Inner Layer: 109
+Base fabric: 101
+Binder-processed Part: 100
+Cuff: 100
+Elastic Part: 87
+Embroidery: 85
+Body: Pocket Lining: 81
+Wing lining: 81
+Body lining: 78
+Tape: 77
+Details: 73
+Front lining: 67
+Filling: Body: 62
+Wing: 62
+Inner Layer: 53
+Side Pocket Fabric: 50
+Sleeves: 42
+Belts: 41
+Other: 40
+Petticoat: 39
+Shell: Base: 38
+Trim: 36
+Body: Face: 33
+Sleeve Lining: 32
+Hood Lining: 32
+Body Lining: 29
+Binding: 29
+Inner Pocket Fabric: 28
+Woven part: 27
+Hood Edge: Inner Layer: 25
+Bottoms: 25
+Hem: 24
+Back lining: 24
+Lining: Pocket Lining: 23
+Pocket Lining: Mesh: 22
+Hood: 21
+Inner: 21
+Side Pocket Fabric: Inner Layer: 20
+Body: Skirt: 20
+Tops: 20
+Elastic rib: 18
+Knitted part: 18
+Plain: 17
+Collar: Face: 17
+Side Pocket Fabric: Outer Layer: 17
+Upper part: 17
+Pocket Lining: Other Fabric: 15
+Other Fabric: 15
+Inside panel: 15
+Frill: 15
+Tulle: 15
+Elastic: 15
+Hood: Shell: 13
+Side part: 13
+Lace: Waist: 12
+Middle layer: 12
+Mesh: Hood: 11
+Lining: Body: 11
+Pocket Lining: Trim: 11
+Strap: 11
+Hood Edge: 10
+Upper lining: 10
+Main Fabric: 9
+Tops: Body: 9
+Piping: 9
+Main part: 9
+Outer layer: 9
+Lining: Checks Pattern: 8
+Inner Pants: 8
+Allover Pattern: 8
+Inner Pocket Fabric: Chest Pocket Fabric: 8
+Filling: Upper Body: 7
+Sleeve: 7
+Body: Hood Lining: 7
+Base: 7
+Net lining: 7
+Chest Pocket Fabric: Collar Lining: 6
+Skirt: 6
+Waffle Pattern: 6
+Ribbed Pattern: 6
+Herringbone Pattern: 6
+Flock Part: 6
+Pocket Lining: Inner Layer: Face: 6
+Collar: Hood Edge: 6
+Waist lining: 6
+Application: 6
+Panel: 6
+Shell: Knit: 5
+Shell: Woven: 5
+Chest Pocket Fabric: Inner Layer: 5
+Body: Scarf: 5
+Fringe: 5
+Elastic section: 5
+Main fabric: 4
+Lining: Checks: 4
+Knit: 4
+Waist: Inner Pants: 4
+Side: 4
+Interlining: 4
+Lower Body: Sides of The Item: Sleeve: 4
+Front Body: Sleeve: 4
+Back Body: Collar: 4
+Animal Patterns: 4
+Star Pattern: 4
+Inner Pocket Fabric: Side Pocket Fabric: Chest Pocket Fabric: Outer Layer: 4
+Face: Base: 4
+Lining: Front Body: 4
+Back Body: 4
+Body: Lining: 4
+Filling: Under Body: 4
+Lower Body: Sides of the Item: Sleeve: 4
+Body: Storage Bag: 4
+Bottoms: Body: 4
+Cup lace: 4
+Net: 4
+Panels: 4
+Front shell: 4
+Sock: 4
+Inner Pocket Fabric: Chest Pocket Fabric: Outer Layer: Side Pocket Fabric: Outer Layer: 3
+Chest Pocket Fabric: Inner Layer: Side Pocket Fabric: Inner Layer: 3
+Side Pocket Fabric: Outer Layer: Inner Pocket Fabric: Chest Pocket Fabric: 3
+Woven: Face: 3
+Shell: Body: 3
+Shirring Part: 3
+Upper Body: 3
+Side Pocket Fabric: Other Fabric: 3
+Lower Body: Top Sleeve: 3
+Sides of The Item: Under Sleeve: 3
+Faux Fur: 3
+Collar: Trim: Cuff: Trim: 3
+Outer Layer: 3
+Placement Design: 3
+Lining: Storage Bag: 3
+Linings: 3
+Back shell: 3
+Upper: 3
+Wing shell: 3
+Lower: 3
+Dress: Body: 2
+Crotch: Face: 2
+Elastic Part: Interlining: 2
+Side Pocket Fabric: Mesh: 2
+Body: Knit: 2
+Body: Woven: 2
+Hearts: 2
+Stripe Pattern: 2
+Floral Pattern: 2
+Dot Pattern: 2
+Jacquard Pattern: 2
+Pocket Lining: Inner Layer: Base: 2
+Decorating Thread: 2
+Hood Lining: Pocket Lining: 2
+Lower Body: 2
+Body: Base: 2
+Inner Pocket Fabric: Base: 2
+Side Pocket Fabric: Trim: 2
+Storage Bag: 2
+Body: Shell: 2
+Inner Pocket Fabric: Side Pocket Fabric: 2
+Inner Layer: Patch Pocket: 2
+Ribbed: 2
+Belt: 2
+Woven: 1
+Skirt: Shell: 1
+Skirt: Lining: 1
+Chest Pocket Fabric: Inner Pocket Fabric: 1
+Lining: Knit: 1
+Lining: Woven: 1
+Upper Body: Collar: Sleeve: 1
+Lower Body: Pocket Lining: 1
+Inner Pocket Fabric: Chest Pocket Fabric: Outer Layer: 1
+Brown: Navy: 1
+Green: 1
+Allover Design: 1
+Stripe: 1
+Dot: 1
+Sleeve panel: 1
+Detail: 1
+Elastic ribs: 1
+
+Component normalization source counts
+------------------------------------------------------------
+exact_rule: 68427
+
+Unmatched raw component paths
+------------------------------------------------------------
+None
+
+Over-100 diagnostics
+============================================================
+Blocks with pct_sum > 102: 718
+Rows dropped due to over_100 blocks: 718

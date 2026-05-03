@@ -1,0 +1,66 @@
+Raw data empty-key summary
+
+Merged cleaned outputs by brand and region
+============================================================
+
+H&M - AU
+Output file: hm_JSONL_au_cleaned.jsonl
+Original rows by gender/section (before dropping)
+  Men: 2060
+  Women: 6979
+  Kids: 6500
+  Other/unknown: 0
+Original rows: 15539
+Dropped rows: 85
+Rows after dropping: 15454
+Empty material_sum: 85
+Empty colour_label: 84
+Empty both keys: 84
+
+H&M - GB
+Output file: hm_JSONL_gb_cleaned.jsonl
+Original rows by gender/section (before dropping)
+  Men: 3414
+  Women: 15590
+  Kids: 10697
+  Other/unknown: 0
+Original rows: 29701
+Dropped rows: 178
+Rows after dropping: 29523
+Empty material_sum: 178
+Empty colour_label: 49
+Empty both keys: 49
+
+Uniqlo - AU
+Output file: uniqlo_JSONL_au_cleaned.jsonl
+Original rows by gender/section (before dropping)
+  Men: 261
+  Women: 655
+  Kids: 188
+  Other/unknown: 0
+Original rows: 1104
+Dropped rows: 1
+Rows after dropping: 1103
+Empty fabric_details_raw: 1
+Empty colour_labels: 1
+Empty both keys: 1
+
+Uniqlo - UK
+Output file: uniqlo_JSONL_uk_cleaned.jsonl
+Original rows by gender/section (before dropping)
+  Men: 460
+  Women: 743
+  Kids: 287
+  Other/unknown: 0
+Original rows: 1490
+Dropped rows: 0
+Rows after dropping: 1490
+Empty fabric_details_raw: 0
+Empty colour_labels: 0
+Empty both keys: 0
+
+Combined total
+============================================================
+Original rows: 47834
+Dropped rows: 264
+Rows after dropping: 47570

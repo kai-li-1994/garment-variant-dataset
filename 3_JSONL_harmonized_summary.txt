@@ -1,0 +1,23 @@
+JSONL harmonization summary
+
+Output file: 3_JSONL_harmonized.jsonl
+Total JSON lines in final aggregated output: 51994
+
+Counts by input file
+============================================================
+uniqlo_JSONL_uk_cleaned_variants.jsonl
+Raw JSON lines: 3936
+Written JSON lines to harmonized output: 3936
+
+uniqlo_JSONL_au_cleaned_variants.jsonl
+Raw JSON lines: 3081
+Written JSON lines to harmonized output: 3081
+
+hm_JSONL_au_cleaned.jsonl
+Raw JSON lines: 15454
+Written JSON lines to harmonized output: 15454
+
+hm_JSONL_gb_cleaned.jsonl
+Raw JSON lines: 29523
+Written JSON lines to harmonized output: 29523
+

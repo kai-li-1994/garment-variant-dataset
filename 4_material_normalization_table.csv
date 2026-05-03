@@ -1,0 +1,64 @@
+﻿mapping_type,canonical_material_name,raw_labels_joined,n_raw_labels
+canonical_group,nylon,nylon ; polyamide ; pa ; pa6 ; pa66,5
+canonical_group,polyester,polyester ; pes ; pet ; repreve,4
+canonical_group,elastane,elastane ; spandex ; lycra,3
+canonical_group,acrylic,acrylic,1
+canonical_group,modacrylic,modacrylic,1
+canonical_group,acetate,acetate ; naia,2
+canonical_group,triacetate,triacetate,1
+canonical_group,elastodiene,elastodiene,1
+canonical_group,elastomultiester,elastomultiester,1
+canonical_group,metallised_fibre,metallised fibre ; metallised fiber ; metalised fibre ; metalised fiber ; metallic fibre ; metallic fiber,6
+canonical_group,cotton,cotton ; supima,2
+canonical_group,wool,wool ; merino ; merino wool,3
+canonical_group,cashmere,cashmere,1
+canonical_group,alpaca,alpaca,1
+canonical_group,mohair,mohair,1
+canonical_group,silk,silk,1
+canonical_group,linen,linen ; flax,2
+canonical_group,hemp,hemp,1
+canonical_group,jute,jute,1
+canonical_group,ramie,ramie,1
+canonical_group,viscose,viscose ; rayon,2
+canonical_group,modal,modal ; tencel modal,2
+canonical_group,lyocell,lyocell ; tencel lyocell ; tencel,3
+canonical_group,cupro,cupro,1
+canonical_group,cellulose,cellulose,1
+canonical_group,leather,genuine cowhide ; genuine leather ; cowhide ; goatskin ; sheepskin ; lambskin ; nappa ; leather,8
+canonical_group,suede,suede,1
+canonical_group,down,down,1
+canonical_group,feather,feather ; feathers,2
+canonical_group,polyethylene,polyethylene ; pe ; epe,3
+canonical_group,polypropylene,polypropylene ; pp,2
+canonical_group,polyurethane,polyurethane ; pu,2
+canonical_group,tpu,thermoplastic polyurethane ; tpu,2
+canonical_group,tpe,thermoplastic elastomer ; tpe,2
+canonical_group,eva,ethylene vinyl acetate ; eva,2
+canonical_group,ptfe,ptfe,1
+canonical_group,rubber,rubber,1
+canonical_group,latex,latex,1
+canonical_group,silicone,silicone,1
+canonical_group,resin,resin,1
+canonical_group,polycarbonate,polycarbonate ; pc,2
+canonical_group,polystyrene,polystyrene,1
+canonical_group,pbt,polybutylene terephthalate ; pbt,2
+canonical_group,pctg,pctg ; polycyclohexylenedimethylene terephthalate ; polycyclohexylene dimethyl terephthalate glycol ; polycyclohexylene dimethylene terephthalate glycol ; poly cyclohexylene dimethylene terephthalate glycol,5
+canonical_group,abs,abs ; acrylonitrile-butadiene-styrene ; acrylonitrile butadiene styrene,3
+canonical_group,mabs,methyl acrylate-butadiene-styrene ; methyl acrylate butadiene styrene ; mabs,3
+canonical_group,pom,polyoxymethylene ; pom ; acetal,3
+canonical_group,pmma,pmma ; polymethyl methacrylate,2
+canonical_group,paper,paper,1
+canonical_group,glass,glass ; fiberglass,2
+canonical_group,pearl,fresh water pearl ; freshwater pearl ; pearl,3
+canonical_group,steel,steel ; stainless steel,2
+canonical_group,iron,iron,1
+canonical_group,brass,brass,1
+canonical_group,zinc,zinc,1
+canonical_group,copper,copper,1
+canonical_group,metal,metal,1
+canonical_group,wax,wax,1
+canonical_group,unspecified_material,other materials ; other material ; other fibres ; other fibers ; unspecified ; unknown ; synthetic,7
+canonical_group,textile,textile,1
+multilingual_alias,cotton,katoen,1
+multilingual_alias,elastane,elastaan,1
+multilingual_alias,acrylic,acryl,1

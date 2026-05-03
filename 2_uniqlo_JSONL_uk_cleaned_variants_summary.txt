@@ -1,0 +1,21 @@
+Uniqlo variant expansion summary
+Input file: uniqlo_JSONL_uk_cleaned.jsonl
+Output file: uniqlo_JSONL_uk_cleaned_variants.jsonl
+
+Total Uniqlo checked: 1490
+Expanded rows before dropping unresolved: 3952
+Dropped unresolved rows: 16
+Final output rows: 3936
+
+Counts by composition_assignment_type (before dropping unresolved):
+mapped_by_colour_only: 199
+mapped_by_id_only: 123
+mapped_by_id_then_colour: 44
+mapped_by_other_colours_default: 103
+shared_no_variants: 3467
+unresolved_colour_mapping: 13
+unresolved_mapping: 3
+
+Dropped unresolved counts:
+unresolved_colour_mapping: 13
+unresolved_mapping: 3

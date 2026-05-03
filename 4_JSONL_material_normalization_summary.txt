@@ -1,0 +1,27 @@
+JSONL material normalization summary
+
+Input file: 3_JSONL_harmonized.jsonl
+Output file: 4_JSONL_material_normalized.jsonl
+Material mapping table file: 4_material_normalization_table.csv
+
+Row processing summary
+============================================================
+Processed non-empty lines: 51994
+Bad JSON lines skipped: 0
+Written JSON lines: 51994
+
+Brand counts
+============================================================
+hm: 44977
+uniqlo: 7017
+
+Normalization changes
+============================================================
+Rows with changed raw_material_text_norm: 9392
+
+Notes
+============================================================
+- raw_material_text is preserved unchanged.
+- raw_material_text_full is preserved unchanged.
+- raw_material_text_norm is added as a new normalized field.
+- Material mapping table is exported directly from CANON_GROUPS and MULTILINGUAL_ALIASES.

@@ -1,0 +1,77 @@
+JSONL category normalization summary
+
+Input file: 4_JSONL_material_normalized.jsonl
+Output file: 5_JSONL_category_normalized.jsonl
+Category mapping table file: 5_category_mapping_table.csv
+Regex table file: 5_category_regex_table.csv
+
+Row processing summary
+============================================================
+Processed non-empty lines: 51994
+Bad JSON lines skipped: 0
+Dropped JSON lines (accessories + footwear + unallocated): 3750
+Written JSON lines after dropping: 48244
+Consistency check (expected written lines): 48244
+
+Dropped scope-category counts
+============================================================
+accessories: 2648
+footwear: 1087
+unallocated_None: 15
+
+Brand counts before scope filtering
+============================================================
+hm: 44977
+uniqlo: 7017
+
+Brand counts after scope filtering (kept rows only)
+============================================================
+hm: 41648
+uniqlo: 6596
+
+Parent category counts (kept rows only)
+============================================================
+tops: 22185
+bottoms: 12172
+overall: 7836
+underwear: 6051
+
+Detail category counts (kept rows only)
+============================================================
+tshirt_polo: 5531
+dresses: 4874
+sweater_cardigan: 4379
+trousers: 4134
+shirt_blouse: 4131
+outerwear_jacket: 3000
+jeans: 2370
+sweatshirt_hoodie: 2011
+socks_hosiery: 1967
+underwear_bottoms: 1956
+shorts: 1816
+skirts: 1772
+set: 1474
+swimwear: 1293
+sleepwear_homewear: 1121
+joggers: 1069
+tank_camisole_vest: 1022
+leggings: 1011
+top_generic: 890
+bras_lingerie: 835
+outerwear_coat: 657
+outerwear_gilet: 564
+jumpsuits_overalls: 367
+
+Detail rule source counts (kept rows only)
+============================================================
+category_tags: 41707
+name_text: 6534
+description_text: 3
+
+Notes
+============================================================
+- This step assigns both detail_category and parent_category.
+- parent_category is derived from detail_category.
+- Rows classified as accessories or footwear are dropped from the exported JSONL.
+- Rows with unallocated category (detail_category=None / parent_category=None) are also dropped.
+- Category mapping table and regex inventory are exported as CSV files.

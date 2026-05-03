@@ -1,0 +1,203 @@
+﻿regex_pattern,readable_rule,component_name_norm,component_class,matched_count
+^back\s*body:\s*collar$,back body: collar,body,surface_component,4
+^body:\s*base$,body: base,body,surface_component,2
+^body:\s*face$,body: face,body,surface_component,33
+^body:\s*knit$,body: knit,body,surface_component,2
+^body:\s*scarf$,body: scarf,body,surface_component,5
+^body:\s*shell$,body: shell,shell,surface_component,2
+^body:\s*skirt$,body: skirt,body,surface_component,20
+^body:\s*woven$,body: woven,body,surface_component,2
+^bottoms:\s*body$,bottoms: body,body,surface_component,4
+^crotch:\s*face$,crotch: face,face,surface_component,2
+^dress:\s*body$,dress: body,body,surface_component,2
+^face:\s*base$,face: base,face,surface_component,4
+^front\s*body:\s*sleeve$,front body: sleeve,body,surface_component,4
+^hood:\s*shell$,hood: shell,shell,surface_component,13
+^lower\s*body:\s*sides\s*of\s*the\s*item:\s*sleeve$,lower body: sides of the item: sleeve,body,surface_component,8
+^lower\s*body:\s*top\s*sleeve$,lower body: top sleeve,body,surface_component,3
+^shell:\s*base$,shell: base,shell,surface_component,38
+^shell:\s*body$,shell: body,shell,surface_component,3
+^shell:\s*knit$,shell: knit,shell,surface_component,5
+^shell:\s*woven$,shell: woven,shell,surface_component,5
+^skirt:\s*shell$,skirt: shell,shell,surface_component,1
+^tops:\s*body$,tops: body,body,surface_component,9
+^upper\s*body:\s*collar:\s*sleeve$,upper body: collar: sleeve,body,surface_component,1
+^woven:\s*face$,woven: face,face,surface_component,3
+^base$,base,base_fabric,surface_component,7
+^base\s*fabric$,base fabric,base_fabric,surface_component,101
+^back\s*body$,back body,body,surface_component,4
+^body$,body,body,surface_component,2107
+^lower\s*body$,lower body,body,surface_component,2
+^upper\s*body$,upper body,body,surface_component,3
+^coating$,coating,coating,surface_component,241
+^face$,face,face,surface_component,135
+^main$,main,main,surface_component,29439
+^main\s*fabric$,main fabric,main,surface_component,13
+^main\s*part$,main part,main,surface_component,9
+^outer\s*layer$,outer layer,outer_layer,surface_component,12
+^back\s*shell$,back shell,shell,surface_component,3
+^front\s*shell$,front shell,shell,surface_component,4
+^shell$,shell,shell,surface_component,16315
+^wing\s*shell$,wing shell,shell,surface_component,3
+^body:\s*hood\s*lining$,body: hood lining,hood_lining,lining_component,7
+^body:\s*lining$,body: lining,body_lining,lining_component,4
+^waist:\s*inner\s*pants$,waist: inner pants,inner_pants,lining_component,4
+^elastic\s*part:\s*interlining$,elastic part: interlining,interlining,lining_component,2
+^hood\s*edge:\s*inner\s*layer$,hood edge: inner layer,inner_layer,lining_component,25
+^lining:\s*front\s*body$,lining: front body,front_body_lining,lining_component,4
+^lining:\s*body$,lining: body,body_lining,lining_component,11
+^skirt:\s*lining$,skirt: lining,skirt_lining,lining_component,1
+^lining:\s*checks$,lining: checks,lining,lining_component,4
+^lining:\s*checks\s*pattern$,lining: checks pattern,lining,lining_component,8
+^lining:\s*knit$,lining: knit,lining,lining_component,1
+^lining:\s*woven$,lining: woven,lining,lining_component,1
+^body\s*lining$,body lining,body_lining,lining_component,107
+^cup\s*\(\s*inner\s*lining\s*\)$,cup \ (inner lining \),cup_lining,lining_component,185
+^cup\s*lining$,cup lining,cup_lining,lining_component,219
+^hood\s*lining$,hood lining,hood_lining,lining_component,260
+^inner\s*layer$,inner layer,inner_layer,lining_component,170
+^inner\s*pants$,inner pants,inner_pants,lining_component,8
+^interlining$,interlining,interlining,lining_component,4
+^back\s*lining$,back lining,lining,lining_component,24
+^crotch\s*lining$,crotch lining,lining,lining_component,810
+^front\s*lining$,front lining,lining,lining_component,67
+^lining$,lining,lining,lining_component,7139
+^linings$,linings,lining,lining_component,3
+^neck\s*lining$,neck lining,lining,lining_component,208
+^net\s*lining$,net lining,lining,lining_component,7
+^upper\s*lining$,upper lining,lining,lining_component,10
+^waist\s*lining$,waist lining,lining,lining_component,6
+^wing\s*lining$,wing lining,lining,lining_component,81
+^petticoat$,petticoat,petticoat,lining_component,39
+^sleeve\s*lining$,sleeve lining,sleeve_lining,lining_component,202
+^down\s*proof\s*fabric$,down proof fabric,down_proof_fabric,lining_component,0
+^body:\s*pocket\s*lining$,body: pocket lining,pocket_lining,pocket_component,81
+^chest\s*pocket\s*fabric:\s*collar\s*lining$,chest pocket fabric: collar lining,chest_pocket_fabric,pocket_component,6
+^chest\s*pocket\s*fabric:\s*inner\s*layer$,chest pocket fabric: inner layer,chest_pocket_fabric,pocket_component,5
+^chest\s*pocket\s*fabric:\s*inner\s*layer:\s*side\s*pocket\s*fabric:\s*inner\s*layer$,chest pocket fabric: inner layer: side pocket fabric: inner layer,chest_pocket_fabric,pocket_component,3
+^chest\s*pocket\s*fabric:\s*inner\s*pocket\s*fabric$,chest pocket fabric: inner pocket fabric,chest_pocket_fabric,pocket_component,1
+^hood\s*lining:\s*pocket\s*lining$,hood lining: pocket lining,pocket_lining,pocket_component,2
+^inner\s*layer:\s*patch\s*pocket$,inner layer: patch pocket,patch_pocket,pocket_component,2
+^inner\s*pocket\s*fabric:\s*base$,inner pocket fabric: base,pocket_fabric,pocket_component,2
+^inner\s*pocket\s*fabric:\s*chest\s*pocket\s*fabric$,inner pocket fabric: chest pocket fabric,pocket_fabric,pocket_component,8
+^inner\s*pocket\s*fabric:\s*chest\s*pocket\s*fabric:\s*outer\s*layer$,inner pocket fabric: chest pocket fabric: outer layer,chest_pocket_fabric,pocket_component,1
+^inner\s*pocket\s*fabric:\s*chest\s*pocket\s*fabric:\s*outer\s*layer:\s*side\s*pocket\s*fabric:\s*outer\s*layer$,inner pocket fabric: chest pocket fabric: outer layer: side pocket fabric: outer layer,chest_pocket_fabric,pocket_component,3
+^inner\s*pocket\s*fabric:\s*side\s*pocket\s*fabric$,inner pocket fabric: side pocket fabric,pocket_fabric,pocket_component,2
+^inner\s*pocket\s*fabric:\s*side\s*pocket\s*fabric:\s*chest\s*pocket\s*fabric:\s*outer\s*layer$,inner pocket fabric: side pocket fabric: chest pocket fabric: outer layer,chest_pocket_fabric,pocket_component,4
+^lining:\s*pocket\s*lining$,lining: pocket lining,pocket_lining,pocket_component,23
+^lower\s*body:\s*pocket\s*lining$,lower body: pocket lining,pocket_lining,pocket_component,1
+^pocket\s*lining:\s*inner\s*layer$,pocket lining: inner layer,pocket_lining,pocket_component,109
+^pocket\s*lining:\s*inner\s*layer:\s*base$,pocket lining: inner layer: base,pocket_lining,pocket_component,2
+^pocket\s*lining:\s*inner\s*layer:\s*face$,pocket lining: inner layer: face,pocket_lining,pocket_component,6
+^pocket\s*lining:\s*mesh$,pocket lining: mesh,pocket_lining,pocket_component,22
+^pocket\s*lining:\s*other\s*fabric$,pocket lining: other fabric,pocket_lining,pocket_component,15
+^pocket\s*lining:\s*outer\s*layer$,pocket lining: outer layer,pocket_lining,pocket_component,167
+^pocket\s*lining:\s*trim$,pocket lining: trim,pocket_lining,pocket_component,11
+^side\s*pocket\s*fabric:\s*inner\s*layer$,side pocket fabric: inner layer,pocket_fabric,pocket_component,20
+^side\s*pocket\s*fabric:\s*mesh$,side pocket fabric: mesh,pocket_fabric,pocket_component,2
+^side\s*pocket\s*fabric:\s*other\s*fabric$,side pocket fabric: other fabric,pocket_fabric,pocket_component,3
+^side\s*pocket\s*fabric:\s*outer\s*layer$,side pocket fabric: outer layer,pocket_fabric,pocket_component,17
+^side\s*pocket\s*fabric:\s*outer\s*layer:\s*inner\s*pocket\s*fabric:\s*chest\s*pocket\s*fabric$,side pocket fabric: outer layer: inner pocket fabric: chest pocket fabric,chest_pocket_fabric,pocket_component,3
+^side\s*pocket\s*fabric:\s*trim$,side pocket fabric: trim,pocket_fabric,pocket_component,2
+^pocket$,pocket,pocket,pocket_component,192
+^inner\s*pocket\s*fabric$,inner pocket fabric,pocket_fabric,pocket_component,28
+^side\s*pocket\s*fabric$,side pocket fabric,pocket_fabric,pocket_component,50
+^pocket\s*lining$,pocket lining,pocket_lining,pocket_component,3993
+^collar:\s*face$,collar: face,collar,trim_component,17
+^collar:\s*trim:\s*cuff:\s*trim$,collar: trim: cuff: trim,collar,trim_component,3
+^lace:\s*waist$,lace: waist,waist,trim_component,12
+^binder\-processed\s*part$,binder-processed part,binder_part,trim_component,100
+^collar$,collar,collar,trim_component,159
+^cuff$,cuff,cuff,trim_component,100
+^elastic\s*part$,elastic part,elastic_part,trim_component,87
+^flock\s*part$,flock part,flock_part,trim_component,6
+^hem$,hem,hem,trim_component,24
+^cup\s*lace$,cup lace,lace,trim_component,4
+^lace$,lace,lace,trim_component,515
+^piping$,piping,piping,trim_component,9
+^elastic\s*rib$,elastic rib,rib,trim_component,18
+^rib$,rib,rib,trim_component,1043
+^ribbed$,ribbed,rib,trim_component,2
+^ribbed\s*pattern$,ribbed pattern,rib,trim_component,6
+^shirring\s*part$,shirring part,shirring_part,trim_component,3
+^tape$,tape,tape,trim_component,77
+^trim$,trim,trim,trim_component,36
+^waist$,waist,waist,trim_component,353
+^belt$,belt,belt,trim_component,2
+^belts$,belts,belt,trim_component,41
+^elastic$,elastic,elastic,trim_component,15
+^elastic\s*ribs$,elastic ribs,elastic ribs,trim_component,1
+^binding$,binding,binding,trim_component,29
+^strap$,strap,strap,trim_component,11
+^collar:\s*hood\s*edge$,collar: hood edge,hood_edge,panel_component,6
+^mesh:\s*hood$,mesh: hood,hood,panel_component,11
+^sides\s*of\s*the\s*item:\s*under\s*sleeve$,sides of the item: under sleeve,sleeve,panel_component,3
+^back$,back,back_panel,panel_component,210
+^bottom$,bottom,bottom_panel,panel_component,114
+^bottoms$,bottoms,bottom_panel,panel_component,25
+^bottom\s*part$,bottom part,bottom_panel,panel_component,181
+^front$,front,front_panel,panel_component,120
+^hood$,hood,hood,panel_component,21
+^hood\s*edge$,hood edge,hood,panel_component,10
+^knit$,knit,knit_part,panel_component,4
+^knitted\s*part$,knitted part,knit_part,panel_component,18
+^plain$,plain,panel,panel_component,17
+^side$,side,side_panel,panel_component,4
+^side\s*part$,side part,side_panel,panel_component,13
+^skirt$,skirt,skirt,panel_component,6
+^sleeve$,sleeve,sleeve,panel_component,7
+^sleeve\s*panel$,sleeve panel,sleeve,panel_component,1
+^top$,top,top_panel,panel_component,202
+^tops$,tops,top_panel,panel_component,20
+^woven$,woven,woven_part,panel_component,1
+^woven\s*part$,woven part,woven_part,panel_component,27
+^crotch$,crotch,crotch,panel_component,170
+^elastic\s*section$,elastic section,elastic section,panel_component,5
+^inside\s*panel$,inside panel,inside_panel,panel_component,15
+^sleeves$,sleeves,sleeves,panel_component,42
+^lower$,lower,lower,panel_component,3
+^upper$,upper,upper,panel_component,3
+^panel$,panel,panel,panel_component,6
+^panels$,panels,panels,panel_component,4
+^upper\s*part$,upper part,upper_part,panel_component,17
+^wing$,wing,wing,panel_component,62
+^filling:\s*under\s*body$,filling: under body,under_body_filling,filling_component,4
+^filling:\s*upper\s*body$,filling: upper body,upper_body_filling,filling_component,7
+^filling:\s*body$,filling: body,body_filling,filling_component,62
+^filling$,filling,filling,filling_component,157
+^padding$,padding,padding,filling_component,646
+^application$,application,application,decoration_component,6
+^decorating\s*thread$,decorating thread,decorating_thread,decoration_component,2
+^faux\s*fur$,faux fur,faux_fur,decoration_component,3
+^allover\s*design$,allover design,pattern_area,decoration_component,1
+^allover\s*pattern$,allover pattern,pattern_area,decoration_component,8
+^animal\s*patterns$,animal patterns,pattern_area,decoration_component,4
+^dot$,dot,pattern_area,decoration_component,1
+^dot\s*pattern$,dot pattern,pattern_area,decoration_component,2
+^floral\s*pattern$,floral pattern,pattern_area,decoration_component,2
+^hearts$,hearts,pattern_area,decoration_component,2
+^herringbone\s*pattern$,herringbone pattern,pattern_area,decoration_component,6
+^jacquard\s*pattern$,jacquard pattern,pattern_area,decoration_component,2
+^placement\s*design$,placement design,pattern_area,decoration_component,3
+^star\s*pattern$,star pattern,pattern_area,decoration_component,4
+^stripe$,stripe,pattern_area,decoration_component,1
+^stripe\s*pattern$,stripe pattern,pattern_area,decoration_component,2
+^waffle\s*pattern$,waffle pattern,pattern_area,decoration_component,6
+^embroidery$,embroidery,embroidery,decoration_component,85
+^tulle$,tulle,tulle,decoration_component,15
+^frill$,frill,frill,decoration_component,15
+^fringe$,fringe,fringe,decoration_component,5
+^brown:\s*navy$,brown: navy,brown: navy,other_component,1
+^green$,green,green,other_component,1
+^mesh$,mesh,mesh,other_component,194
+^middle\s*layer$,middle layer,middle layer,other_component,12
+^other$,other,other,other_component,40
+^other\s*fabric$,other fabric,other fabric,other_component,15
+^sock$,sock,sock,other_component,4
+^net$,net,net,other_component,4
+^inner$,inner,inner_support,other_component,21
+^detail$,detail,detail,other_component,1
+^details$,details,details,other_component,73
+^body:\s*storage\s*bag$,body: storage bag,storage_bag,other_component,4
+^lining:\s*storage\s*bag$,lining: storage bag,storage_bag,other_component,3
+^storage\s*bag$,storage bag,storage_bag,other_component,2
