@@ -17,7 +17,7 @@ This file contains **47,522 colour-specific garment variants** and is the direct
 The GitHub repository does not directly include `6_JSONL_component_normalized.jsonl` because of file-size constraints. The complete archived dataset release, including this JSONL file, is available on Zenodo:
 
 ```text
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20006389.svg)](https://doi.org/10.5281/zenodo.20006389)
+[[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20006389.svg)](https://doi.org/10.5281/zenodo.20006389)](https://doi.org/10.5281/zenodo.20006389)
 ```
 
 ## Contents
