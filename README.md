@@ -15,7 +15,7 @@ This file contains **47,522 colour-specific garment variants** and is the direct
 The GitHub repository does not directly include `6_JSONL_component_normalized.jsonl` because of file-size constraints. The complete archived dataset release, including this JSONL file, is available on Zenodo:
 
 ```text
-DOI to be added
+[DOI to be added](https://doi.org/10.5281/zenodo.20006389)
 ```
 
 ## Contents
@@ -747,10 +747,8 @@ This dataset was derived from publicly accessible retailer product-page informat
 If you use this dataset or code, please cite the archived Zenodo release:
 
 ```text
-Li, Y., [co-authors]. (2026). Harmonized garment-variant dataset for textile sorting and fibre-to-fibre recycling analysis (Version 1.0.0) [Data set and code]. Zenodo. https://doi.org/xxxxx
+Li, K., & Walther, G. (2026). Harmonized garment-variant dataset for textile sorting and fibre-to-fibre recycling analysis (1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.20006389
 ```
-
-Please replace the DOI above with the DOI assigned to the archived Zenodo release.
 
 ## License
 
