@@ -39,6 +39,26 @@ This file contains **47,522 colour-specific garment variants** and is the direct
 - [Ethics statement](#ethics-statement)
 - [Recommended citation](#recommended-citation)
 - [License](#license)
+## Schematic overview of dataset construction
+
+The figure below summarizes how the final garment-variant dataset was generated from retailer product-page records through six preprocessing steps.
+
+
+```mermaid
+flowchart TD
+    A["Raw scraped product-page records: 47,834 rows"] --> B["Step 1: Minimum-information filtering; output: 47,570 rows"]
+    B --> C1["H&M cleaned records: 44,977 rows"]
+    B --> C2["Uniqlo cleaned records: 2,593 rows"]
+    C2 --> D["Step 2: Uniqlo colour-variant expansion; output: 7,017 variant rows"]
+    C1 --> E["Step 3: Cross-retailer schema harmonization"]
+    D --> E
+    E --> F["3_JSONL_harmonized.jsonl: 51,994 rows"]
+    F --> G["Step 4: Material-name normalization; output: 51,994 rows"]
+    G --> H["Step 5: Category normalization and scope filtering; output: 48,244 rows"]
+    H --> I["Step 6: Component normalization and consistency filtering; output: 47,522 rows"]
+    I --> J["Final released dataset: 6_JSONL_component_normalized.jsonl"]
+    J --> K["Input for sorting and preprocessing/disruptor analyses"]
+```
 
 ## Dataset overview
 
