@@ -6,8 +6,13 @@ authors:
   - family-names: Li
     given-names: Kai
     affiliation: "Chair of Operations Management, RWTH Aachen University"
+  - family-names: Walther
+    given-names: Grit
+    affiliation: "Chair of Operations Management, RWTH Aachen University"
 date-released: 2026-05-03
 version: "1.0.0"
+doi: "10.5281/zenodo.20006389"
+url: "https://doi.org/10.5281/zenodo.20006389"
 license: "CC-BY-4.0"
 abstract: "This dataset contains 47,522 colour-specific garment variants derived from publicly accessible H&M and Uniqlo product pages in the United Kingdom and Australia. The release includes a final component-normalized JSONL dataset, preprocessing scripts, CSV mapping tables, and TXT processing summaries for textile sorting and fibre-to-fibre recycling analysis."
 keywords:
@@ -20,5 +25,3 @@ keywords:
   - fast fashion
   - material composition
   - component normalization
-doi: "10.5281/zenodo.20006389"
-url: "https://doi.org/10.5281/zenodo.20006389"
