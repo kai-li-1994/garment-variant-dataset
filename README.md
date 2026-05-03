@@ -213,16 +213,80 @@ raw_material_text_full
 
 The material-normalization step processed **51,994 records** and wrote **51,994 records**. In total, **9,392 records** had changed normalized material text after material-name normalization.
 
-Examples of material-name harmonization include analytically equivalent or synonymous terms such as:
+Material names were normalized by replacing common synonyms, abbreviations, branded names, and analytically equivalent labels with canonical material names. The table below documents the mapping used in `CANON_GROUPS`.
 
-| Raw or equivalent terms | Canonical interpretation |
+| Canonical material name | Raw labels mapped to this name |
 |---|---|
-| nylon, polyamide | nylon / polyamide-equivalent category |
-| elastane, spandex | elastane-equivalent category |
-| polyester, PES | polyester-equivalent category |
-| viscose, rayon | viscose-equivalent category |
+| `nylon` | `nylon`, `polyamide`, `pa`, `pa6`, `pa66` |
+| `polyester` | `polyester`, `pes`, `pet`, `repreve` |
+| `elastane` | `elastane`, `spandex`, `lycra` |
+| `acrylic` | `acrylic` |
+| `modacrylic` | `modacrylic` |
+| `acetate` | `acetate`, `naia` |
+| `triacetate` | `triacetate` |
+| `elastodiene` | `elastodiene` |
+| `elastomultiester` | `elastomultiester` |
+| `metallised_fibre` | `metallised fibre`, `metallised fiber`, `metalised fibre`, `metalised fiber`, `metallic fibre`, `metallic fiber` |
+| `cotton` | `cotton`, `supima` |
+| `wool` | `wool`, `merino`, `merino wool` |
+| `cashmere` | `cashmere` |
+| `alpaca` | `alpaca` |
+| `mohair` | `mohair` |
+| `silk` | `silk` |
+| `linen` | `linen`, `flax` |
+| `hemp` | `hemp` |
+| `jute` | `jute` |
+| `ramie` | `ramie` |
+| `viscose` | `viscose`, `rayon` |
+| `modal` | `modal`, `tencel modal` |
+| `lyocell` | `lyocell`, `tencel lyocell`, `tencel` |
+| `cupro` | `cupro` |
+| `cellulose` | `cellulose` |
+| `leather` | `genuine cowhide`, `genuine leather`, `cowhide`, `goatskin`, `sheepskin`, `lambskin`, `nappa`, `leather` |
+| `suede` | `suede` |
+| `down` | `down` |
+| `feather` | `feather`, `feathers` |
+| `polyethylene` | `polyethylene`, `pe`, `epe` |
+| `polypropylene` | `polypropylene`, `pp` |
+| `polyurethane` | `polyurethane`, `pu` |
+| `tpu` | `thermoplastic polyurethane`, `tpu` |
+| `tpe` | `thermoplastic elastomer`, `tpe` |
+| `eva` | `ethylene vinyl acetate`, `eva` |
+| `ptfe` | `ptfe` |
+| `rubber` | `rubber` |
+| `latex` | `latex` |
+| `silicone` | `silicone` |
+| `resin` | `resin` |
+| `polycarbonate` | `polycarbonate`, `pc` |
+| `polystyrene` | `polystyrene` |
+| `pbt` | `polybutylene terephthalate`, `pbt` |
+| `pctg` | `pctg`, `polycyclohexylenedimethylene terephthalate`, `polycyclohexylene dimethyl terephthalate glycol`, `polycyclohexylene dimethylene terephthalate glycol`, `poly cyclohexylene dimethylene terephthalate glycol` |
+| `abs` | `abs`, `acrylonitrile-butadiene-styrene`, `acrylonitrile butadiene styrene` |
+| `mabs` | `methyl acrylate-butadiene-styrene`, `methyl acrylate butadiene styrene`, `mabs` |
+| `pom` | `polyoxymethylene`, `pom`, `acetal` |
+| `pmma` | `pmma`, `polymethyl methacrylate` |
+| `paper` | `paper` |
+| `glass` | `glass`, `fiberglass` |
+| `pearl` | `fresh water pearl`, `freshwater pearl`, `pearl` |
+| `steel` | `steel`, `stainless steel` |
+| `iron` | `iron` |
+| `brass` | `brass` |
+| `zinc` | `zinc` |
+| `copper` | `copper` |
+| `metal` | `metal` |
+| `wax` | `wax` |
+| `unspecified_material` | `other materials`, `other material`, `other fibres`, `other fibers`, `unspecified`, `unknown`, `synthetic` |
+| `textile` | `textile` |
 
-The purpose of this step was to improve consistency for subsequent category, component, sorting-rule, and disruptor-rule analyses while preserving the original retailer-disclosed material text.
+The script also applies a small set of multilingual aliases before the main canonical mapping:
+
+| Alias | Canonical material name |
+|---|---|
+| `katoen` | `cotton` |
+| `elastaan` | `elastane` |
+| `acryl` | `acrylic` |
+
+The purpose of this step was to improve consistency for subsequent category, component, sorting-rule, and disruptor-rule analyses while preserving the original retailer-disclosed material text. Some brand-specific, qualified, or highly specific material labels may remain unchanged where no unambiguous mapping was applied.
 
 ## Step 5: Category normalization and scope filtering
 
@@ -266,6 +330,8 @@ The full parent–detail category mapping is:
 | `overall` | `dresses`, `jumpsuits_overalls`, `sleepwear_homewear`, `set` |
 | `footwear` | `footwear` |
 | `accessories` | `accessories` |
+
+Records assigned to `footwear`, `accessories`, or no resolved category were treated as out of scope for the garment-level sorting and preprocessing analyses and were removed from the exported category-normalized dataset.
 
 Out-of-scope records were removed at this stage:
 
