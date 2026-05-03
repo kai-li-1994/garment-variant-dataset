@@ -12,6 +12,34 @@ The final dataset file is:
 
 This file contains **47,522 colour-specific garment variants** and is the direct input used for the associated textile sorting and preprocessing/disruptor analyses.
 
+## Contents
+
+- [Dataset overview](#dataset-overview)
+- [Specifications](#specifications)
+- [Repository purpose](#repository-purpose)
+- [Data source and accessibility](#data-source-and-accessibility)
+- [Repository contents](#repository-contents)
+- [File inventory](#file-inventory)
+- [Final dataset](#final-dataset)
+- [Key fields in the final dataset](#key-fields-in-the-final-dataset)
+- [Component-level structure](#component-level-structure)
+- [Value of the data and reuse potential](#value-of-the-data-and-reuse-potential)
+- [Data-processing workflow](#data-processing-workflow)
+- [Dataset-size summary](#dataset-size-summary)
+- [Step 1: Minimum-information filtering](#step-1-minimum-information-filtering)
+- [Step 2: Uniqlo colour-variant expansion](#step-2-uniqlo-colour-variant-expansion)
+- [Step 3: Cross-retailer schema harmonization](#step-3-cross-retailer-schema-harmonization)
+- [Step 4: Material-name normalization](#step-4-material-name-normalization)
+- [Step 5: Category normalization and scope filtering](#step-5-category-normalization-and-scope-filtering)
+- [Step 6: Component normalization and consistency filtering](#step-6-component-normalization-and-consistency-filtering)
+- [Raw and processed data availability](#raw-and-processed-data-availability)
+- [Relationship to sorting and preprocessing analyses](#relationship-to-sorting-and-preprocessing-analyses)
+- [Public-release curation](#public-release-curation)
+- [Limitations](#limitations)
+- [Ethics statement](#ethics-statement)
+- [Recommended citation](#recommended-citation)
+- [License](#license)
+
 ## Dataset overview
 
 The data were collected from online product pages of two major fast-fashion retailers:
