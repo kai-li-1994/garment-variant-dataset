@@ -1,8 +1,12 @@
 # Harmonized garment-variant dataset for textile sorting and fibre-to-fibre recycling analysis
 
-This repository contains a curated garment-variant dataset and preprocessing pipeline derived from publicly accessible online product pages of H&M and Uniqlo in the United Kingdom and Australia.
+This repository contains a curated garment-variant dataset and preprocessing pipeline derived from publicly accessible online product pages of two major fast-fashion retailers, H&M and Uniqlo, in the United Kingdom and Australia.
 
 The dataset was developed to support garment-level analysis of textile sorting compatibility, preprocessing requirements, and potential barriers to fibre-to-fibre recycling. It provides harmonized information on product identifiers, retailer region, colour-specific variants, material composition, normalized material names, normalized garment categories, normalized component structures, and derived rule-based analytical inputs.
+
+Product URLs were first collected within a concentrated time window for each retailer-region website, defining the assortment before detailed product information was extracted. All harmonized records retained two timestamps: the time when the product URL was collected and the time when the corresponding product details were scraped. URL collection occurred between 24 and 26 March 2026, while product-detail scraping was completed between 24 March and 8 April 2026.
+
+The analytical unit was defined as the colour-specific garment variant rather than the original product-page record. This was especially important for Uniqlo, where one product page could contain multiple colour variants and, in some cases, variant-specific composition information.
 
 The final dataset file is:
 
