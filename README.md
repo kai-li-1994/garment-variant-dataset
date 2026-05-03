@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20006389.svg)](https://doi.org/10.5281/zenodo.20006389)
 # Harmonized garment-variant dataset for textile sorting and fibre-to-fibre recycling analysis
 
 This repository contains the documentation, preprocessing scripts, mapping tables, and processing summaries for a curated garment-variant dataset derived from publicly accessible online product pages of H&M and Uniqlo in the United Kingdom and Australia.
