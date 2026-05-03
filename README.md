@@ -1,8 +1,8 @@
 # Harmonized garment-variant dataset for textile sorting and fibre-to-fibre recycling analysis
 
-This repository contains a curated garment-variant dataset and preprocessing pipeline derived from publicly accessible online product pages of two major fast-fashion retailers, H&M and Uniqlo, in the United Kingdom and Australia.
+This repository contains a curated garment-variant dataset and preprocessing pipeline derived from publicly accessible online product pages of H&M and Uniqlo in the United Kingdom and Australia.
 
-The dataset was developed to support garment-level analysis of textile sorting compatibility, preprocessing requirements, and potential barriers to fibre-to-fibre recycling. It provides harmonized information on product identifiers, retailer region, colour-specific variants, material composition, normalized material names, normalized garment categories, normalized component structures, and derived rule-based analytical inputs.
+The dataset was developed to support garment-level analysis of textile sorting compatibility, preprocessing requirements, and potential barriers to fibre-to-fibre recycling. It provides harmonized information on product identifiers, retailer region, colour-specific variants, material composition, normalized material names, normalized garment categories, normalized component structures, and derived analytical inputs.
 
 The final dataset file is:
 
@@ -10,7 +10,7 @@ The final dataset file is:
 6_JSONL_component_normalized.jsonl
 ```
 
-This file contains **47,522 colour-specific garment variants** and is the direct input used for the associated sorting and preprocessing/disruptor analyses.
+This file contains **47,522 colour-specific garment variants** and is the direct input used for the associated textile sorting and preprocessing/disruptor analyses.
 
 ## Dataset overview
 
@@ -26,9 +26,7 @@ The geographic scope covers retailer websites in:
 
 The dataset includes men’s, women’s, and children’s clothing. The analytical unit is the **colour-specific garment variant**, rather than the original product-page record.
 
-This unit was chosen because colour, material composition, and product details can differ across variants of the same nominal product. These differences are relevant for sorting and recycling analysis, especially where colour or component-level composition influences the interpretation of a garment.
-
-Product URLs were first collected within a concentrated time window for each retailer-region website, defining the online assortment before detailed product information was extracted. All harmonized records retain two timestamps: the time when the product URL was collected and the time when the corresponding product details were scraped. URL collection occurred between **24 and 26 March 2026**, while product-detail scraping was completed between **24 March and 8 April 2026**.
+This unit was chosen because colour, material composition, and product details can differ across variants of the same nominal product. These differences are relevant for sorting and recycling analysis, especially where colour, fibre composition, or component-level construction influences the interpretation of a garment.
 
 ## Specifications
 
@@ -36,13 +34,13 @@ Product URLs were first collected within a concentrated time window for each ret
 |---|---|
 | Subject area | Environmental science; industrial ecology; circular economy; textile recycling |
 | Specific subject area | Garment-level retailer web data for textile sorting, preprocessing, and fibre-to-fibre recycling analysis |
-| Type of data | Processed JSONL dataset; CSV summary tables; Python scripts; text log files; data dictionary/documentation |
+| Type of data | Processed JSONL dataset; Python preprocessing scripts; CSV mapping and rule tables; TXT processing summaries |
 | Data source | Publicly accessible H&M and Uniqlo product pages from the United Kingdom and Australia |
 | Data collection period | URL collection: 24–26 March 2026; product-detail scraping: 24 March–8 April 2026 |
 | Unit of analysis | Colour-specific garment variant |
 | Final dataset | `6_JSONL_component_normalized.jsonl` |
 | Number of final records | 47,522 garment variants |
-| Repository contents | Curated dataset, preprocessing scripts, processing summaries, normalization mapping tables, and documentation |
+| Repository contents | Final curated dataset, preprocessing scripts, processing summaries, normalization mapping tables, and documentation |
 | Data accessibility | The archived version will be released through Zenodo with a persistent DOI |
 
 ## Repository purpose
@@ -62,20 +60,81 @@ The repository provides a curated research dataset. It is **not** a redistributi
 
 ## Data source and accessibility
 
-The data were derived from publicly accessible online product pages of H&M and Uniqlo in the United Kingdom and Australia. Product-page URLs and scrape timestamps are retained for provenance.
+The dataset was derived from publicly accessible online product pages of H&M and Uniqlo in the United Kingdom and Australia.
 
-The archived release of this repository will be deposited on Zenodo. The DOI and direct URL will be added here after publication of the release.
+To reduce temporal inconsistency in the product pool, URL collection and product-detail scraping were separated. Product URLs were first collected within a concentrated time window for each retailer-region website, defining the product assortment before detailed product information was extracted. All harmonized records retain two timestamps:
 
-| Item | Information |
+```text
+url_collected_at
+scraped_at
+```
+
+URL collection occurred between **24 and 26 March 2026**, while product-detail scraping was completed between **24 March and 8 April 2026**. Although detailed scraping took place over a longer period, it was applied to a fixed URL pool, reducing the risk of mixing products from changing online assortments.
+
+The archived release of this repository will be deposited on Zenodo.
+
+```text
+Repository: Zenodo
+Data identification number: To be added
+DOI: To be added
+Direct URL: To be added
+```
+
+## Repository contents
+
+This repository includes the following public-release files:
+
+```text
+6_JSONL_component_normalized.jsonl
+
+1_JSONL_drop_empty_summary.py
+2_JSONL_uniqlo_variants_expansion.py
+3_JSONL_key_harmonization.py
+4_JSONL_material_normalization.py
+5_JSONL_category_normalization.py
+6_JSONL_component_normalization.py
+
+4_material_normalization_table.csv
+5_category_mapping_table.csv
+5_category_regex_table.csv
+6_component_name_summary_table.csv
+6_component_rule_mapping_table.csv
+
+1_JSONL_drop_empty_summary.txt
+2_uniqlo_JSONL_uk_cleaned_variants_summary.txt
+3_JSONL_harmonized_summary.txt
+4_JSONL_material_normalization_summary.txt
+5_JSONL_category_normalized_summary.txt
+6_JSONL_component_normalized_summary.txt
+```
+
+The public release contains the final curated dataset and the preprocessing documentation needed to understand how it was constructed. It does not redistribute product images, model images, screenshots, raw HTML, full webpage captures, review text, or unnecessary commercial webpage material.
+
+## File inventory
+
+| File | Description |
 |---|---|
-| Repository name | Zenodo |
-| Data identification number | To be added |
-| Direct URL to data | To be added |
-| Access instructions | Public release to be added after Zenodo archiving |
+| `README.md` | Main documentation for the dataset, processing workflow, released files, and reuse potential |
+| `6_JSONL_component_normalized.jsonl` | Final curated garment-variant dataset used as the direct input for the sorting and preprocessing/disruptor analyses |
+| `1_JSONL_drop_empty_summary.py` | Script for filtering raw product-page records with missing material or colour information |
+| `2_JSONL_uniqlo_variants_expansion.py` | Script for expanding Uniqlo product-page records into colour-specific variant rows |
+| `3_JSONL_key_harmonization.py` | Script for harmonizing H&M and Uniqlo records into a common schema |
+| `4_JSONL_material_normalization.py` | Script for material-name normalization |
+| `5_JSONL_category_normalization.py` | Script for garment-category normalization and scope filtering |
+| `6_JSONL_component_normalization.py` | Script for parsing and normalizing component-level material-composition information |
+| `4_material_normalization_table.csv` | Material-name mapping table exported directly from `CANON_GROUPS` and `MULTILINGUAL_ALIASES` in the material-normalization script |
+| `5_category_mapping_table.csv` | Human-readable category mapping table linking rule order, parent/detail categories, include/exclude rule groups, and readable/raw patterns |
+| `5_category_regex_table.csv` | Technical category regex inventory containing include/exclude pattern groups |
+| `6_component_name_summary_table.csv` | Summary table of normalized component names, component classes, and matched counts |
+| `6_component_rule_mapping_table.csv` | Full component rule-mapping table containing regex patterns, readable rules, normalized component names, component classes, and matched counts |
+| `1_JSONL_drop_empty_summary.txt` | Summary of minimum-information filtering by brand and region |
+| `2_uniqlo_JSONL_uk_cleaned_variants_summary.txt` | Summary of Uniqlo UK colour-variant expansion. The same script was run separately for Uniqlo Australia by changing the input file |
+| `3_JSONL_harmonized_summary.txt` | Summary of cross-retailer harmonization and final harmonized line counts |
+| `4_JSONL_material_normalization_summary.txt` | Summary of material normalization, including row counts and number of changed normalized material-text records |
+| `5_JSONL_category_normalized_summary.txt` | Summary of category normalization, scope filtering, parent/detail category counts, and rule-source counts |
+| `6_JSONL_component_normalized_summary.txt` | Summary of component normalization, row filtering, component counts, and component-normalization diagnostics |
 
-## Data description
-
-### Final dataset
+## Final dataset
 
 The final processed dataset is:
 
@@ -93,29 +152,14 @@ The final dataset contains:
 
 The final records include harmonized product metadata, normalized material text, normalized garment categories, and structured component-level composition information.
 
-### Dataset-size summary
-
-| Step | Input records | Removed / unresolved records | Output records | Main purpose |
-|---|---:|---:|---:|---|
-| Raw scraped records | 47,834 | 264 removed | 47,570 | Remove records missing minimum material or colour information |
-| Uniqlo AU colour-variant expansion | 1,103 cleaned Uniqlo AU records | 7 unresolved expanded rows | 3,081 variant rows | Convert Uniqlo AU records into colour-specific variants |
-| Uniqlo UK colour-variant expansion | 1,490 cleaned Uniqlo UK records | 16 unresolved expanded rows | 3,936 variant rows | Convert Uniqlo UK records into colour-specific variants |
-| Cross-retailer harmonization | 44,977 H&M records + 7,017 Uniqlo variant records | 0 | 51,994 | Align H&M and Uniqlo into a common schema |
-| Material normalization | 51,994 | 0 | 51,994 | Add canonical material labels while preserving original material text |
-| Category normalization and scope filtering | 51,994 | 3,750 removed | 48,244 | Assign harmonized garment categories and remove out-of-scope records |
-| Component normalization and consistency filtering | 48,244 | 722 removed | 47,522 | Parse component-level composition and remove inconsistent records |
-| Final analysis dataset | 47,522 | — | 47,522 | Direct input for sorting and preprocessing analyses |
-
-The increase from 47,570 cleaned product records to 51,994 harmonized variant-level records occurs because Uniqlo product-page records were expanded into colour-specific garment variants. H&M records were already treated as colour-specific variants through product-page URLs.
-
-### Key fields in the final dataset
+## Key fields in the final dataset
 
 | Field | Description |
 |---|---|
 | `parent_product_id` | Retailer product identifier for the parent product or product page |
 | `brand` | Retailer brand, either `hm` or `uniqlo` |
 | `region` | Retailer website region |
-| `url` | Product-page URL used for provenance |
+| `url` | Product-page URL retained for provenance |
 | `url_collected_at` | Timestamp when the product URL was collected |
 | `scraped_at` | Timestamp when product details were scraped |
 | `gender_section` | Retailer gender or section label |
@@ -125,7 +169,7 @@ The increase from 47,570 cleaned product records to 51,994 harmonized variant-le
 | `all_colour_labels` | All colour labels listed for the product |
 | `raw_material_text` | Material-composition text assigned to the variant |
 | `raw_material_text_full` | Full raw material-composition text from the source record |
-| `composition_assignment_type` | Method used to assign composition information to the colour variant |
+| `composition_assignment_type` | Method used to assign material-composition information to the colour variant |
 | `raw_description_text` | Retailer-facing product description text retained in the working schema where available |
 | `raw_function_text` | Retailer-facing structured function or attribute text where available |
 | `rating` | Retailer-disclosed product rating where available |
@@ -137,9 +181,9 @@ The increase from 47,570 cleaned product records to 51,994 harmonized variant-le
 | `parent_category` | Harmonized parent garment category |
 | `components_structured` | Parsed and normalized component-level material-composition records |
 
-### Component-level structure
+## Component-level structure
 
-The field `components_structured` stores a list of parsed components. Each component entry contains:
+The field `components_structured` stores a list of parsed component records. Each component entry contains:
 
 | Field | Description |
 |---|---|
@@ -160,42 +204,6 @@ Each entry in `materials` contains:
 | `pct` | Material percentage within the component |
 | `recycled_pct` | Reported recycled-content percentage where available; otherwise null |
 
-### Component occurrence summary
-
-The final dataset contains **68,427 component occurrences**.
-
-| Component class | Count |
-|---|---:|
-| `surface_component` | 48,573 |
-| `lining_component` | 9,621 |
-| `pocket_component` | 4,786 |
-| `trim_component` | 2,673 |
-| `panel_component` | 1,348 |
-| `filling_component` | 876 |
-| `other_component` | 375 |
-| `decoration_component` | 175 |
-
-All retained component occurrences were matched by exact component-normalization rules.
-
-### File inventory
-
-| File or folder | Description |
-|---|---|
-| `README.md` | Main documentation for the dataset and preprocessing workflow |
-| `6_JSONL_component_normalized.jsonl` | Final curated garment-variant dataset used as direct input for the sorting and preprocessing/disruptor analyses |
-| `1_JSONL_drop_empty_summary.py` | Script for filtering raw records with missing material or colour information |
-| `2_JSONL_uniqlo_variants_expansion.py` | Script for expanding Uniqlo product-page records into colour-specific variant rows |
-| `3_JSONL_key_harmonization.py` | Script for harmonizing H&M and Uniqlo records into a common schema |
-| `4_JSONL_material_normalization.py` | Script for material-name normalization |
-| `4_material_mapping_table.csv` | Exported material-name mapping table generated from the material-normalization script, if included in the release |
-| `5_JSONL_category_normalization.py` | Script for category normalization and scope filtering |
-| `5_category_regex_table.csv` | Exported category-rule regex table, if included in the release |
-| `6_JSONL_component_normalization.py` | Script for component parsing, component normalization, and consistency filtering |
-| `6_component_rule_mapping_table.csv` | Exported component-normalization rule table, if included in the release |
-| `*_summary.txt` | Processing summaries and log files documenting record counts and filtering outcomes |
-| `rule_eval_outputs/` | Optional folder containing sorting-rule outputs generated from `6_JSONL_component_normalized.jsonl` |
-| `disruptor_eval_outputs/` | Optional folder containing preprocessing/disruptor-rule outputs generated from `6_JSONL_component_normalized.jsonl` |
-
 ## Value of the data and reuse potential
 
 - The dataset provides garment-variant-level information on material composition, colour, product category, and component structure for two major fast-fashion retailers across two regional markets.
@@ -206,9 +214,11 @@ All retained component occurrences were matched by exact component-normalization
 
 - The structured component-level representation can support further work on garment complexity, linings, trims, pocket structures, coatings, and other features relevant to textile circularity.
 
-- The preprocessing scripts and log files provide an auditable workflow from raw retailer product-page records to an analysis-ready JSONL dataset.
+- The preprocessing scripts, CSV mapping tables, and TXT summary files provide an auditable workflow from retailer product-page records to an analysis-ready JSONL dataset.
 
-## Experimental design, materials, and methods
+- The dataset may also support future comparative work with other retailers, markets, or time periods, provided that new product-page data are transformed into a compatible schema.
+
+## Data-processing workflow
 
 The dataset was produced through six sequential preprocessing steps:
 
@@ -230,7 +240,20 @@ The scripts are numbered according to this workflow:
 6_JSONL_component_normalization.py
 ```
 
-### Step 1: Minimum-information filtering
+## Dataset-size summary
+
+| Step | Input records | Removed / unresolved records | Output records | Main purpose |
+|---|---:|---:|---:|---|
+| Raw scraped records | 47,834 | 264 removed | 47,570 | Remove records missing minimum material or colour information |
+| Uniqlo AU colour-variant expansion | 1,103 cleaned Uniqlo AU records | 7 unresolved expanded rows | 3,081 variant rows | Convert Uniqlo AU records into colour-specific variants |
+| Uniqlo UK colour-variant expansion | 1,490 cleaned Uniqlo UK records | 16 unresolved expanded rows | 3,936 variant rows | Convert Uniqlo UK records into colour-specific variants |
+| Cross-retailer harmonization | 44,977 H&M records + 7,017 Uniqlo variant records | 0 | 51,994 | Align H&M and Uniqlo into a common schema |
+| Material normalization | 51,994 | 0 | 51,994 | Add canonical material labels while preserving original material text |
+| Category normalization and scope filtering | 51,994 | 3,750 removed | 48,244 | Assign harmonized garment categories and remove out-of-scope records |
+| Component normalization and consistency filtering | 48,244 | 722 removed | 47,522 | Parse component-level composition and remove inconsistent records |
+| Final analysis dataset | 47,522 | — | 47,522 | Direct input for sorting and preprocessing analyses |
+
+## Step 1: Minimum-information filtering
 
 Raw product-page records were first filtered to retain only records with the minimum information required for downstream rule evaluation.
 
@@ -248,11 +271,9 @@ fabric_details_raw
 colour_labels
 ```
 
-Records were removed if they lacked material information, colour information, or both.
+Records were removed if they lacked material information, colour information, or both. This step was necessary because both material composition and colour are required for garment-level sorting and recycling-barrier assessment.
 
 The raw scraped dataset contained **47,834 product-page records**. After removing records with missing material or colour information, **47,570 records** remained.
-
-Summary:
 
 | Retailer-region | Original rows | Dropped rows | Rows after dropping |
 |---|---:|---:|---:|
@@ -262,17 +283,23 @@ Summary:
 | Uniqlo UK | 1,490 | 0 | 1,490 |
 | **Total** | **47,834** | **264** | **47,570** |
 
-### Step 2: Uniqlo colour-variant expansion
+The summary file for this step is:
+
+```text
+1_JSONL_drop_empty_summary.txt
+```
+
+## Step 2: Uniqlo colour-variant expansion
 
 The analytical unit of this dataset is the colour-specific garment variant.
 
 H&M records were already treated as colour-specific variants because colour variants were represented through product-page URLs. Uniqlo records required additional processing because one Uniqlo product page could contain multiple colour variants and, in some cases, variant-specific material composition.
 
-The Uniqlo expansion script creates one row per colour variant.
+The Uniqlo expansion script creates one row per colour variant. Where no internal material-composition branching was detected, the same composition text was assigned to all listed colours. Where product-ID-specific or colour-specific branching was present in the raw material field, the script isolated the relevant segment and assigned it to the corresponding colour. Records for which no reliable assignment could be established were removed rather than inferred.
 
-Where no internal material-composition branching was detected, the same composition text was assigned to all listed colours. Where product-ID-specific or colour-specific branching was present in the raw material field, the script isolated the relevant segment and assigned it to the corresponding colour. Records for which no reliable assignment could be established were removed rather than inferred.
+The script `2_JSONL_uniqlo_variants_expansion.py` is configured for one Uniqlo region at a time. It was run separately for the UK and Australia by changing the `input_file` variable.
 
-#### Uniqlo UK
+### Uniqlo UK
 
 | Metric | Count |
 |---|---:|
@@ -281,7 +308,7 @@ Where no internal material-composition branching was detected, the same composit
 | Dropped unresolved rows | 16 |
 | Final variant rows | 3,936 |
 
-#### Uniqlo Australia
+### Uniqlo Australia
 
 | Metric | Count |
 |---|---:|
@@ -290,7 +317,7 @@ Where no internal material-composition branching was detected, the same composit
 | Dropped unresolved rows | 7 |
 | Final variant rows | 3,081 |
 
-#### Composition-assignment types
+### Composition-assignment types
 
 The field `composition_assignment_type` records how material composition was assigned to each colour-specific variant.
 
@@ -305,11 +332,17 @@ The field `composition_assignment_type` records how material composition was ass
 | `unresolved_colour_mapping` | Colour-specific mapping could not be resolved; these rows were removed |
 | `unresolved_mapping` | General mapping could not be resolved; these rows were removed |
 
-### Step 3: Cross-retailer schema harmonization
+The summary file included in this repository for this step is:
+
+```text
+2_uniqlo_JSONL_uk_cleaned_variants_summary.txt
+```
+
+## Step 3: Cross-retailer schema harmonization
 
 Cleaned H&M records and expanded Uniqlo records were harmonized into a common JSONL schema.
 
-This step renamed, retained, and dropped keys to align records across brands and regions. The harmonized schema includes product identifiers, brand, region, URL, timestamps, gender section, raw retailer category, product name, colour information, material-composition fields, description/function fields, and selected metadata.
+This step was needed because the two retailers used different raw field names, different category structures, and different formats for material, colour, description, and function information. Harmonization created a common schema that could be used by all subsequent normalization and rule-evaluation steps.
 
 The harmonized output is:
 
@@ -327,9 +360,17 @@ The harmonized dataset contained **51,994 variant-level records**.
 | `hm_JSONL_gb_cleaned.jsonl` | 29,523 |
 | **Total** | **51,994** |
 
-### Step 4: Material-name normalization
+The increase from 47,570 cleaned product records to 51,994 harmonized variant-level records occurs because Uniqlo product-page records were expanded into colour-specific garment variants.
 
-Material normalization was applied to the harmonized JSONL file.
+The summary file for this step is:
+
+```text
+3_JSONL_harmonized_summary.txt
+```
+
+## Step 4: Material-name normalization
+
+Material-name normalization was performed because retailer-disclosed composition strings can use different names, abbreviations, branded terms, or synonyms for analytically equivalent materials. For example, nylon and polyamide, elastane and spandex, and polyester and PES need to be treated consistently in downstream analysis.
 
 The input file was:
 
@@ -358,84 +399,36 @@ raw_material_text_full
 
 The material-normalization step processed **51,994 records** and wrote **51,994 records**. In total, **9,392 records** had changed normalized material text after material-name normalization.
 
-Material names were normalized by replacing common synonyms, abbreviations, branded names, and analytically equivalent labels with canonical material names. The table below documents the mapping used in `CANON_GROUPS`.
+The full material-name mapping used in this step is exported as:
 
-| Canonical material name | Raw labels mapped to this name |
+```text
+4_material_normalization_table.csv
+```
+
+This table is generated directly from the `CANON_GROUPS` and `MULTILINGUAL_ALIASES` dictionaries in `4_JSONL_material_normalization.py`, ensuring that the documentation matches the executed normalization logic.
+
+The mapping table contains:
+
+| Column | Description |
 |---|---|
-| `nylon` | `nylon`, `polyamide`, `pa`, `pa6`, `pa66` |
-| `polyester` | `polyester`, `pes`, `pet`, `repreve` |
-| `elastane` | `elastane`, `spandex`, `lycra` |
-| `acrylic` | `acrylic` |
-| `modacrylic` | `modacrylic` |
-| `acetate` | `acetate`, `naia` |
-| `triacetate` | `triacetate` |
-| `elastodiene` | `elastodiene` |
-| `elastomultiester` | `elastomultiester` |
-| `metallised_fibre` | `metallised fibre`, `metallised fiber`, `metalised fibre`, `metalised fiber`, `metallic fibre`, `metallic fiber` |
-| `cotton` | `cotton`, `supima` |
-| `wool` | `wool`, `merino`, `merino wool` |
-| `cashmere` | `cashmere` |
-| `alpaca` | `alpaca` |
-| `mohair` | `mohair` |
-| `silk` | `silk` |
-| `linen` | `linen`, `flax` |
-| `hemp` | `hemp` |
-| `jute` | `jute` |
-| `ramie` | `ramie` |
-| `viscose` | `viscose`, `rayon` |
-| `modal` | `modal`, `tencel modal` |
-| `lyocell` | `lyocell`, `tencel lyocell`, `tencel` |
-| `cupro` | `cupro` |
-| `cellulose` | `cellulose` |
-| `leather` | `genuine cowhide`, `genuine leather`, `cowhide`, `goatskin`, `sheepskin`, `lambskin`, `nappa`, `leather` |
-| `suede` | `suede` |
-| `down` | `down` |
-| `feather` | `feather`, `feathers` |
-| `polyethylene` | `polyethylene`, `pe`, `epe` |
-| `polypropylene` | `polypropylene`, `pp` |
-| `polyurethane` | `polyurethane`, `pu` |
-| `tpu` | `thermoplastic polyurethane`, `tpu` |
-| `tpe` | `thermoplastic elastomer`, `tpe` |
-| `eva` | `ethylene vinyl acetate`, `eva` |
-| `ptfe` | `ptfe` |
-| `rubber` | `rubber` |
-| `latex` | `latex` |
-| `silicone` | `silicone` |
-| `resin` | `resin` |
-| `polycarbonate` | `polycarbonate`, `pc` |
-| `polystyrene` | `polystyrene` |
-| `pbt` | `polybutylene terephthalate`, `pbt` |
-| `pctg` | `pctg`, `polycyclohexylenedimethylene terephthalate`, `polycyclohexylene dimethyl terephthalate glycol`, `polycyclohexylene dimethylene terephthalate glycol`, `poly cyclohexylene dimethylene terephthalate glycol` |
-| `abs` | `abs`, `acrylonitrile-butadiene-styrene`, `acrylonitrile butadiene styrene` |
-| `mabs` | `methyl acrylate-butadiene-styrene`, `methyl acrylate butadiene styrene`, `mabs` |
-| `pom` | `polyoxymethylene`, `pom`, `acetal` |
-| `pmma` | `pmma`, `polymethyl methacrylate` |
-| `paper` | `paper` |
-| `glass` | `glass`, `fiberglass` |
-| `pearl` | `fresh water pearl`, `freshwater pearl`, `pearl` |
-| `steel` | `steel`, `stainless steel` |
-| `iron` | `iron` |
-| `brass` | `brass` |
-| `zinc` | `zinc` |
-| `copper` | `copper` |
-| `metal` | `metal` |
-| `wax` | `wax` |
-| `unspecified_material` | `other materials`, `other material`, `other fibres`, `other fibers`, `unspecified`, `unknown`, `synthetic` |
-| `textile` | `textile` |
+| `mapping_type` | Whether the row comes from the main canonical mapping or multilingual alias mapping |
+| `canonical_material_name` | Normalized material name |
+| `raw_labels_joined` | Raw labels mapped to the canonical material name |
+| `n_raw_labels` | Number of raw labels in the mapping row |
 
-The script also applies a small set of multilingual aliases before the main canonical mapping:
+The summary file for this step is:
 
-| Alias | Canonical material name |
-|---|---|
-| `katoen` | `cotton` |
-| `elastaan` | `elastane` |
-| `acryl` | `acrylic` |
+```text
+4_JSONL_material_normalization_summary.txt
+```
 
-The purpose of this step was to improve consistency for subsequent category, component, sorting-rule, and disruptor-rule analyses while preserving the original retailer-disclosed material text. Some brand-specific, qualified, or highly specific material labels may remain unchanged where no unambiguous mapping was applied.
+## Step 5: Category normalization and scope filtering
 
-### Step 5: Category normalization and scope filtering
+Category normalization was performed because the scraped category information differed in structure and granularity between retailers. H&M product records contained relatively detailed breadcrumb-style category information, whereas Uniqlo records used broader category labels and often required product-name evidence to distinguish garment types.
 
-Category normalization mapped retailer-specific category information into a harmonized two-level garment taxonomy.
+Without harmonization, equivalent garments could remain separated under retailer-specific categories, making cross-brand aggregation and downstream sorting analysis inconsistent. The purpose of this step was therefore to translate heterogeneous retailer-facing categories into a common garment taxonomy that could be used for aggregation, comparison, and future reuse with other retailer datasets.
+
+The taxonomy combines retailer-native product taxonomies with sorting-oriented grouping logic informed by the Sorting for Circularity Europe sorting handbook.
 
 The input file was:
 
@@ -449,23 +442,16 @@ The output file was:
 5_JSONL_category_normalized.jsonl
 ```
 
-The category-normalization procedure combined:
-
-- retailer-native category information;
-- product names;
-- product descriptions where needed;
-- sorting-oriented grouping logic.
-
-Because H&M and Uniqlo used different category structures, field priority differed by brand. H&M mapping relied more strongly on detailed category breadcrumbs, whereas Uniqlo mapping relied more strongly on product names.
-
-The output taxonomy contains:
+The resulting taxonomy has two levels:
 
 ```text
 parent_category
 detail_category
 ```
 
-The full parent–detail category mapping is:
+The parent category provides a broad garment group for aggregation, while the detail category provides a more specific garment type used for analysis and diagnostics.
+
+The full parent-detail category mapping is:
 
 | Parent category | Detail categories |
 |---|---|
@@ -478,7 +464,7 @@ The full parent–detail category mapping is:
 
 Records assigned to `footwear`, `accessories`, or no resolved category were treated as out of scope for the garment-level sorting and preprocessing analyses and were removed from the exported category-normalized dataset.
 
-Out-of-scope records were removed at this stage:
+Out-of-scope records removed at this stage were:
 
 | Removed category | Count |
 |---|---:|
@@ -489,7 +475,7 @@ Out-of-scope records were removed at this stage:
 
 After category normalization and scope filtering, **48,244 garment-variant records** remained.
 
-#### Final parent-category counts after category filtering
+### Final parent-category counts after category filtering
 
 | Parent category | Count |
 |---|---:|
@@ -498,9 +484,26 @@ After category normalization and scope filtering, **48,244 garment-variant recor
 | `overall` | 7,836 |
 | `underwear` | 6,051 |
 
-### Step 6: Component normalization and consistency filtering
+The category assignment was implemented as a deterministic rule-based procedure. For each record, the script assembled searchable fields from retailer category tags, product name, and product description. Field priority was adapted by retailer: H&M records prioritized detailed category breadcrumbs, while Uniqlo records prioritized product names. Scope filters for footwear and accessories were applied first, followed by increasingly specific garment-category rules. More specific categories were evaluated before broader fallback categories.
 
-Component normalization parsed material-composition strings into structured component-level records.
+Two documentation tables are exported:
+
+| File | Purpose |
+|---|---|
+| `5_category_mapping_table.csv` | Human-readable category mapping table linking each `detail_category` to its `parent_category`, rule group, source evidence, and rule order |
+| `5_category_regex_table.csv` | Technical regex inventory containing include/exclude pattern groups in both readable and raw regex form |
+
+The summary file for this step is:
+
+```text
+5_JSONL_category_normalized_summary.txt
+```
+
+## Step 6: Component normalization and consistency filtering
+
+Component normalization was performed because retailer-disclosed material-composition strings often describe different garment parts using heterogeneous component labels. For example, the main visible fabric may appear as `shell`, `body`, `main`, `face`, or `outer layer`, while secondary structures may appear as `lining`, `pocket lining`, `collar`, `cuff`, `padding`, `coating`, or other local component labels.
+
+This normalization was needed to make component-level information comparable across retailers and garment types. It also provides the structural basis for later sorting and preprocessing analyses, where the distinction between visible surface materials, concealed linings, trims, pockets, fillings, coatings, and secondary components is analytically important.
 
 The input file was:
 
@@ -514,58 +517,93 @@ The output file was:
 6_JSONL_component_normalized.jsonl
 ```
 
-This step does not redo material normalization. It uses the normalized material text field:
+The component-normalization script reads the material-normalized field:
 
 ```text
 raw_material_text_norm
 ```
 
-The purpose of this step is to convert heterogeneous retailer composition strings into a structured component representation.
-
-For example, composition strings may contain labels such as:
+It then parses the composition string into component-material blocks, extracts material percentages, preserves reported recycled-content information where available, assigns a normalized component name, and assigns a broader component class. The resulting component-level representation is stored in:
 
 ```text
-Shell
-Body
-Main
-Lining
-Pocket lining
-Collar
-Cuff
-Padding
-Filling
-Coating
-Panel
+components_structured
 ```
 
-These raw component labels are mapped to standardized component names and broader component classes.
+The component-normalization procedure uses deterministic first-match rules. The full rule-level mapping is exported as:
 
-#### Component classes
+```text
+6_component_rule_mapping_table.csv
+```
+
+A compact normalized component-name summary is exported as:
+
+```text
+6_component_name_summary_table.csv
+```
+
+### Component classes
 
 The component taxonomy contains the following broad classes:
 
-| Component class | Description |
-|---|---|
-| `surface_component` | Main visible or surface textile component, such as shell, body, main, face, coating |
-| `lining_component` | Lining or concealed layer, such as lining, body lining, sleeve lining, hood lining, inner layer |
-| `pocket_component` | Pocket-related material, such as pocket lining or pocket fabric |
-| `trim_component` | Local trim or garment detail, such as collar, cuff, rib, lace, elastic part, tape |
-| `panel_component` | Named panel or garment section, such as front panel, back panel, side panel, woven part |
-| `filling_component` | Filling or padding material |
-| `decoration_component` | Decorative textile or non-textile features such as embroidery, frill, fringe, faux fur |
-| `other_component` | Residual component class for reviewed but less analytically specific components |
+| Component class | Purpose in the dataset | Example normalized component names |
+|---|---|---|
+| `surface_component` | Main visible or surface textile layer used to identify the likely readable outer material | `main`, `shell`, `body`, `face`, `base_fabric`, `outer_layer`, `coating` |
+| `lining_component` | Inner or concealed textile layers that may differ from the surface material | `lining`, `body_lining`, `sleeve_lining`, `hood_lining`, `inner_layer`, `cup_lining`, `interlining`, `petticoat` |
+| `pocket_component` | Pocket-related components that may represent secondary material structures | `pocket`, `pocket_lining`, `pocket_fabric`, `chest_pocket_fabric`, `patch_pocket` |
+| `trim_component` | Local garment trims or edge/detail structures | `collar`, `cuff`, `rib`, `lace`, `elastic_part`, `waist`, `belt`, `binding`, `tape`, `piping`, `strap` |
+| `panel_component` | Named garment panels or local fabric sections | `front_panel`, `back_panel`, `side_panel`, `bottom_panel`, `top_panel`, `sleeve`, `hood`, `panel`, `woven_part`, `knit_part` |
+| `filling_component` | Filling, padding, or insulation components | `filling`, `padding`, `body_filling`, `upper_body_filling`, `under_body_filling` |
+| `decoration_component` | Decorative textile or surface-detail elements | `embroidery`, `frill`, `fringe`, `tulle`, `faux_fur`, `application`, `pattern_area`, `decorating_thread` |
+| `other_component` | Reviewed residual component labels that did not fit the analytical classes above | `mesh`, `middle layer`, `other`, `other fabric`, `inner_support`, `details`, `storage_bag` |
 
-#### Component-normalization filtering
+### Component-normalization filtering
 
 During component normalization:
 
 | Filtering reason | Count |
 |---|---:|
 | No usable material text | 4 |
-| Component percentage sum above consistency threshold | 718 |
+| Rows with component percentage sum above consistency threshold | 718 |
 | **Total removed** | **722** |
 
 After this step, the final dataset contained **47,522 records**.
+
+### Component occurrence summary
+
+The final dataset contains **68,427 component occurrences**.
+
+| Component class | Count |
+|---|---:|
+| `surface_component` | 48,573 |
+| `lining_component` | 9,621 |
+| `pocket_component` | 4,786 |
+| `trim_component` | 2,673 |
+| `panel_component` | 1,348 |
+| `filling_component` | 876 |
+| `other_component` | 375 |
+| `decoration_component` | 175 |
+
+All retained component occurrences were matched by exact component-normalization rules.
+
+The summary file for this step is:
+
+```text
+6_JSONL_component_normalized_summary.txt
+```
+
+## Raw and processed data availability
+
+This repository releases the curated, analysis-ready dataset rather than the full raw scraped webpage records. The final released dataset is:
+
+```text
+6_JSONL_component_normalized.jsonl
+```
+
+This file is the direct input used for the associated sorting and preprocessing/disruptor analyses.
+
+The public release also includes the preprocessing scripts, mapping tables, and processing summaries required to document how the final dataset was constructed from the raw scraped records. The full raw scraped files are not redistributed because they may contain unnecessary third-party webpage content, including long-form retailer descriptions, image-related metadata, review-related fields, or other commercial webpage material not required for reproducing the analytical dataset.
+
+Product-page URLs and scrape timestamps are retained in the curated dataset to support provenance and allow users to trace the source records where pages remain available.
 
 ## Relationship to sorting and preprocessing analyses
 
@@ -600,7 +638,7 @@ The public release does not redistribute:
 - review text;
 - unnecessary commercial metadata.
 
-Long-form retailer marketing descriptions may be minimized or transformed into derived feature evidence in public-release versions, depending on the release package. The internal working pipeline retains raw text fields where needed for reproducibility, rule debugging, and validation.
+Long-form retailer marketing descriptions may be minimized or transformed into derived feature evidence in public-release versions, depending on the release package. The internal working pipeline retained raw text fields where needed for reproducibility, rule debugging, and validation.
 
 ## Limitations
 
