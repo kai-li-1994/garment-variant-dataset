@@ -86,7 +86,7 @@ This unit was chosen because colour, material composition, and product details c
 
 The figure below summarizes how the final garment-variant dataset was generated from retailer product-page records through six preprocessing steps.
 
-```mermaide
+```mermaid
 flowchart TD
     A["Raw scraped product-page records: 47,834 rows"] --> B["Step 1: Minimum-information filtering; output: 47,570 rows"]
     B --> C1["H&M cleaned records: 44,977 rows"]
