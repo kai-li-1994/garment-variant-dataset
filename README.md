@@ -86,7 +86,7 @@ This unit was chosen because colour, material composition, and product details c
 
 The figure below summarizes how the final garment-variant dataset was generated from retailer product-page records through six preprocessing steps.
 
-![Schematic overview of dataset construction](workflow_dataset_construction.png)
+![Schematic overview of dataset construction](workflow_dataset_construction.svg)
 
 This workflow shows how raw retailer product-page records were transformed into the final curated dataset `6_JSONL_component_normalized.jsonl`. The preprocessing pipeline first removes records lacking the minimum material-colour information needed for analysis, then expands Uniqlo records to colour-specific variants, harmonizes H&M and Uniqlo records into a common schema, normalizes material names, assigns a harmonized garment-category taxonomy, and finally parses and normalizes component-level composition information.
 ## Repository purpose
