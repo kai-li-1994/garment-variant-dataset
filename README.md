@@ -256,14 +256,16 @@ parent_category
 detail_category
 ```
 
-Examples include:
+The full parent–detail category mapping is:
 
-| Parent category | Detail category examples |
+| Parent category | Detail categories |
 |---|---|
-| `tops` | `outerwear_jacket`, `shirt_blouse`, `tshirt_polo`, `sweater_cardigan` |
-| `bottoms` | `jeans`, `trousers`, `leggings`, `shorts`, `skirts` |
+| `tops` | `outerwear_coat`, `outerwear_jacket`, `outerwear_gilet`, `shirt_blouse`, `tshirt_polo`, `tank_camisole_vest`, `sweater_cardigan`, `sweatshirt_hoodie`, `top_generic` |
+| `bottoms` | `jeans`, `trousers`, `leggings`, `joggers`, `shorts`, `skirts` |
 | `underwear` | `underwear_bottoms`, `bras_lingerie`, `swimwear`, `socks_hosiery` |
 | `overall` | `dresses`, `jumpsuits_overalls`, `sleepwear_homewear`, `set` |
+| `footwear` | `footwear` |
+| `accessories` | `accessories` |
 
 Out-of-scope records were removed at this stage:
 
