@@ -39,10 +39,10 @@ This file contains **47,522 colour-specific garment variants** and is the direct
 - [Ethics statement](#ethics-statement)
 - [Recommended citation](#recommended-citation)
 - [License](#license)
+
 ## Schematic overview of dataset construction
 
-The figure below summarizes how the final garment-variant dataset was generated from retailer product-page records through six preprocessing steps.
-
+The figure below summarizes how the final garment-variant dataset was generated from retailer product-page records through six steps.
 
 ```mermaid
 flowchart TD
