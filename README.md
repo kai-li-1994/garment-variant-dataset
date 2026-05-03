@@ -1,16 +1,22 @@
 # Harmonized garment-variant dataset for textile sorting and fibre-to-fibre recycling analysis
 
-This repository contains a curated garment-variant dataset and preprocessing pipeline derived from publicly accessible online product pages of H&M and Uniqlo in the United Kingdom and Australia.
+This repository contains the documentation, preprocessing scripts, mapping tables, and processing summaries for a curated garment-variant dataset derived from publicly accessible online product pages of H&M and Uniqlo in the United Kingdom and Australia.
 
 The dataset was developed to support garment-level analysis of textile sorting compatibility, preprocessing requirements, and potential barriers to fibre-to-fibre recycling. It provides harmonized information on product identifiers, retailer region, colour-specific variants, material composition, normalized material names, normalized garment categories, normalized component structures, and derived analytical inputs.
 
-The final dataset file is:
+The final dataset file archived in the Zenodo release is:
 
 ```text
 6_JSONL_component_normalized.jsonl
 ```
 
 This file contains **47,522 colour-specific garment variants** and is the direct input used for the associated textile sorting and preprocessing/disruptor analyses.
+
+The GitHub repository does not directly include `6_JSONL_component_normalized.jsonl` because of file-size constraints. The complete archived dataset release, including this JSONL file, is available on Zenodo:
+
+```text
+DOI to be added
+```
 
 ## Contents
 
@@ -68,10 +74,11 @@ This unit was chosen because colour, material composition, and product details c
 | Data source | Publicly accessible H&M and Uniqlo product pages from the United Kingdom and Australia |
 | Data collection period | URL collection: 24–26 March 2026; product-detail scraping: 24 March–8 April 2026 |
 | Unit of analysis | Colour-specific garment variant |
-| Final dataset | `6_JSONL_component_normalized.jsonl` |
+| Final dataset | `6_JSONL_component_normalized.jsonl`, archived in the Zenodo release |
 | Number of final records | 47,522 garment variants |
-| Repository contents | Final curated dataset, preprocessing scripts, processing summaries, normalization mapping tables, and documentation |
-| Data accessibility | The archived version will be released through Zenodo with a persistent DOI |
+| GitHub repository contents | Documentation, preprocessing scripts, mapping tables, and processing summaries |
+| Zenodo release contents | Complete archived dataset release, including the final JSONL dataset file |
+| Data accessibility | The complete archived version will be released through Zenodo with a persistent DOI |
 
 ## Schematic overview of dataset construction
 
@@ -108,7 +115,7 @@ The repository is intended to support:
 - fibre-to-fibre recycling-barrier assessment;
 - reproducible use of retailer web data for textile circularity research.
 
-The repository provides a curated research dataset. It is **not** a redistribution or mirror of retailer webpages.
+The GitHub repository provides the maintained documentation and preprocessing workflow. The complete archived dataset release is provided on Zenodo. This project is **not** a redistribution or mirror of retailer webpages.
 
 ## Data source and accessibility
 
@@ -123,7 +130,7 @@ scraped_at
 
 URL collection occurred between **24 and 26 March 2026**, while product-detail scraping was completed between **24 March and 8 April 2026**. Although detailed scraping took place over a longer period, it was applied to a fixed URL pool, reducing the risk of mixing products from changing online assortments.
 
-The archived release of this repository will be deposited on Zenodo.
+The complete archived release of this dataset will be deposited on Zenodo.
 
 ```text
 Repository: Zenodo
@@ -132,12 +139,24 @@ DOI: To be added
 Direct URL: To be added
 ```
 
-## Repository contents
-
-This repository includes the following public-release files:
+The GitHub repository contains the maintained documentation, preprocessing scripts, mapping tables, and processing summaries. The Zenodo release contains the complete archived package, including the final dataset file:
 
 ```text
 6_JSONL_component_normalized.jsonl
+```
+
+## Repository contents
+
+The GitHub repository includes the public-release documentation, preprocessing scripts, mapping tables, and summary files. The complete Zenodo release additionally includes the final curated dataset file:
+
+```text
+6_JSONL_component_normalized.jsonl
+```
+
+The GitHub repository includes:
+
+```text
+README.md
 
 1_JSONL_drop_empty_summary.py
 2_JSONL_uniqlo_variants_expansion.py
@@ -160,14 +179,14 @@ This repository includes the following public-release files:
 6_JSONL_component_normalized_summary.txt
 ```
 
-The public release contains the final curated dataset and the preprocessing documentation needed to understand how it was constructed. It does not redistribute product images, model images, screenshots, raw HTML, full webpage captures, review text, or unnecessary commercial webpage material.
+The public release does not redistribute product images, model images, screenshots, raw HTML, full webpage captures, review text, or unnecessary commercial webpage material.
 
 ## File inventory
 
 | File | Description |
 |---|---|
 | `README.md` | Main documentation for the dataset, processing workflow, released files, and reuse potential |
-| `6_JSONL_component_normalized.jsonl` | Final curated garment-variant dataset used as the direct input for the sorting and preprocessing/disruptor analyses |
+| `6_JSONL_component_normalized.jsonl` | Final curated garment-variant dataset used as the direct input for the sorting and preprocessing/disruptor analyses. This file is included in the Zenodo release rather than uploaded directly to GitHub because of file-size constraints |
 | `1_JSONL_drop_empty_summary.py` | Script for filtering raw product-page records with missing material or colour information |
 | `2_JSONL_uniqlo_variants_expansion.py` | Script for expanding Uniqlo product-page records into colour-specific variant rows |
 | `3_JSONL_key_harmonization.py` | Script for harmonizing H&M and Uniqlo records into a common schema |
@@ -185,6 +204,9 @@ The public release contains the final curated dataset and the preprocessing docu
 | `4_JSONL_material_normalization_summary.txt` | Summary of material normalization, including row counts and number of changed normalized material-text records |
 | `5_JSONL_category_normalized_summary.txt` | Summary of category normalization, scope filtering, parent/detail category counts, and rule-source counts |
 | `6_JSONL_component_normalized_summary.txt` | Summary of component normalization, row filtering, component counts, and component-normalization diagnostics |
+| `LICENSE` | MIT license for source code and scripts |
+| `LICENSE-DATA.md` | CC BY 4.0 license statement for dataset files, derived tables, documentation, and metadata, unless otherwise stated |
+| `CITATION.cff` | Citation metadata file for GitHub and Zenodo citation support |
 
 ## Final dataset
 
@@ -203,6 +225,8 @@ The final dataset contains:
 ```
 
 The final records include harmonized product metadata, normalized material text, normalized garment categories, and structured component-level composition information.
+
+Because of file-size constraints, `6_JSONL_component_normalized.jsonl` is archived in the Zenodo release rather than tracked directly in the GitHub repository.
 
 ## Key fields in the final dataset
 
@@ -328,7 +352,7 @@ Records were removed if they lacked material information, colour information, or
 The raw scraped dataset contained **47,834 product-page records**. After removing records with missing material or colour information, **47,570 records** remained.
 
 | Retailer-region | Original rows | Dropped rows | Rows after dropping |
-|---|---:|---:|
+|---|---:|---:|---:|
 | H&M AU | 15,539 | 85 | 15,454 |
 | H&M GB | 29,701 | 178 | 29,523 |
 | Uniqlo AU | 1,104 | 1 | 1,103 |
@@ -647,15 +671,17 @@ The summary file for this step is:
 
 ## Raw and processed data availability
 
-This repository releases the curated, analysis-ready dataset rather than the full raw scraped webpage records. The final released dataset is:
+The final curated dataset file `6_JSONL_component_normalized.jsonl` is archived in the Zenodo release rather than tracked directly in the GitHub repository because of file-size constraints. The GitHub repository contains the preprocessing scripts, mapping tables, processing summaries, and documentation needed to understand and reuse the dataset.
+
+The Zenodo release is the complete archived dataset record. It includes:
 
 ```text
 6_JSONL_component_normalized.jsonl
 ```
 
-This file is the direct input used for the associated sorting and preprocessing/disruptor analyses.
+and the same documentation, scripts, mapping tables, and processing summaries provided in the GitHub repository.
 
-The public release also includes the preprocessing scripts, mapping tables, and processing summaries required to document how the final dataset was constructed from the raw scraped records. The full raw scraped files are not redistributed because they may contain unnecessary third-party webpage content, including long-form retailer descriptions, image-related metadata, review-related fields, or other commercial webpage material not required for reproducing the analytical dataset.
+This repository releases the curated, analysis-ready dataset rather than the full raw scraped webpage records. The full raw scraped files are not redistributed because they may contain unnecessary third-party webpage content, including long-form retailer descriptions, image-related metadata, review-related fields, or other commercial webpage material not required for reproducing the analytical dataset.
 
 Product-page URLs and scrape timestamps are retained in the curated dataset to support provenance and allow users to trace the source records where pages remain available.
 
@@ -677,7 +703,7 @@ Study-specific rule outputs are generated from the final component-normalized da
 
 ## Public-release curation
 
-This repository provides a curated research dataset rather than a full copy of retailer webpages.
+This repository and the associated Zenodo record provide a curated research dataset rather than a full copy of retailer webpages.
 
 The public release retains fields required for scientific reuse and reproducibility, including product-page URLs, scrape timestamps, product identifiers, product names, colour labels, material-composition fields, normalized materials, normalized categories, normalized components, quality-control flags, and analytical outputs.
 
@@ -718,7 +744,7 @@ This dataset was derived from publicly accessible retailer product-page informat
 
 ## Recommended citation
 
-If you use this dataset or code, please cite the archived release:
+If you use this dataset or code, please cite the archived Zenodo release:
 
 ```text
 Li, Y., [co-authors]. (2026). Harmonized garment-variant dataset for textile sorting and fibre-to-fibre recycling analysis (Version 1.0.0) [Data set and code]. Zenodo. https://doi.org/xxxxx
@@ -732,4 +758,4 @@ Dataset files, derived tables, documentation, and metadata are licensed under th
 
 Source code and scripts are licensed under the MIT License.
 
-The dataset was derived from publicly accessible retailer product-page information. The public release does not redistribute product images, screenshots, raw HTML, review text, or full webpage captures. The above licenses apply only to the curated dataset, documentation, and code included in this repository.
+The dataset was derived from publicly accessible retailer product-page information. The public release does not redistribute product images, screenshots, raw HTML, review text, or full webpage captures. The above licenses apply only to the curated dataset, documentation, and code included in this repository and the associated Zenodo release.
