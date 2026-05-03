@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: "Harmonized garment-variant dataset for textile sorting and fibre-to-fibre recycling analysis"
+message: "If you use this dataset or code, please cite the archived Zenodo release."
+type: dataset
+authors:
+  - family-names: Li
+    given-names: Kai
+    affiliation: "Chair of Operations Management, RWTH Aachen University"
+date-released: 2026-05-03
+version: "1.0.0"
+license: "CC-BY-4.0"
+abstract: "This dataset contains 47,522 colour-specific garment variants derived from publicly accessible H&M and Uniqlo product pages in the United Kingdom and Australia. The release includes a final component-normalized JSONL dataset, preprocessing scripts, CSV mapping tables, and TXT processing summaries for textile sorting and fibre-to-fibre recycling analysis."
+keywords:
+  - textile recycling
+  - garment data
+  - automated textile sorting
+  - fibre-to-fibre recycling
+  - circular economy
+  - industrial ecology
+  - fast fashion
+  - material composition
+  - component normalization
