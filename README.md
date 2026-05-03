@@ -137,8 +137,8 @@ The complete archived release of this dataset will be deposited on Zenodo.
 ```text
 Repository: Zenodo
 Data identification number: To be added
-DOI: To be added
-Direct URL: To be added
+DOI: 10.5281/zenodo.20006389
+Direct URL: https://doi.org/10.5281/zenodo.20006389
 ```
 
 The GitHub repository contains the maintained documentation, preprocessing scripts, mapping tables, and processing summaries. The Zenodo release contains the complete archived package, including the final dataset file:
