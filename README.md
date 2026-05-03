@@ -86,9 +86,23 @@ This unit was chosen because colour, material composition, and product details c
 
 The figure below summarizes how the final garment-variant dataset was generated from retailer product-page records through six preprocessing steps.
 
-![Schematic overview of dataset construction](mermaid-diagram-2026-05-03-191421.png)
+```mermaide
+flowchart TD
+    A["Raw scraped product-page records: 47,834 rows"] --> B["Step 1: Minimum-information filtering; output: 47,570 rows"]
+    B --> C1["H&M cleaned records: 44,977 rows"]
+    B --> C2["Uniqlo cleaned records: 2,593 rows"]
+    C2 --> D["Step 2: Uniqlo colour-variant expansion; output: 7,017 variant rows"]
+    C1 --> E["Step 3: Cross-retailer schema harmonization"]
+    D --> E
+    E --> F["3_JSONL_harmonized.jsonl: 51,994 rows"]
+    F --> G["Step 4: Material-name normalization; output: 51,994 rows"]
+    G --> H["Step 5: Category normalization and scope filtering; output: 48,244 rows"]
+    H --> I["Step 6: Component normalization and consistency filtering; output: 47,522 rows"]
+    I --> J["Final released dataset: 6_JSONL_component_normalized.jsonl"]
+    J --> K["Input for sorting and preprocessing/disruptor analyses"]
 
 This workflow shows how raw retailer product-page records were transformed into the final curated dataset `6_JSONL_component_normalized.jsonl`. The preprocessing pipeline first removes records lacking the minimum material-colour information needed for analysis, then expands Uniqlo records to colour-specific variants, harmonizes H&M and Uniqlo records into a common schema, normalizes material names, assigns a harmonized garment-category taxonomy, and finally parses and normalizes component-level composition information.
+```
 ## Repository purpose
 
 This repository documents how raw retailer product-page records were transformed into a harmonized, analysis-ready garment dataset.
