@@ -2,9 +2,9 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281%2Fzenodo.20006389.svg)](https://doi.org/10.5281/zenodo.20006389)
 
-This repository contains the documentation, preprocessing scripts, mapping tables, and processing summaries for a curated garment-variant dataset derived from publicly accessible online product pages of H&M and Uniqlo in the United Kingdom and Australia.
+This repository contains the documentation, Python scripts used for dataset construction, mapping tables, and processing summaries for a curated garment-variant dataset derived from publicly accessible online product pages of H&M and Uniqlo in the United Kingdom and Australia.
 
-The dataset was developed to support garment-level analysis of textile sorting compatibility, preprocessing requirements, and potential barriers to fibre-to-fibre recycling. It provides harmonized information on product identifiers, retailer region, colour-specific variants, material composition, normalized material names, normalized garment categories, normalized component structures, and derived analytical inputs.
+The dataset was developed to support garment-level analysis of textile sorting compatibility, textile pre-processing requirements, and potential barriers to fibre-to-fibre recycling. It provides harmonized information on product identifiers, retailer region, colour-specific variants, material composition, normalized material names, normalized garment categories, normalized component structures, and derived analytical inputs.
 
 The final dataset file archived in the Zenodo release is:
 
@@ -34,6 +34,7 @@ https://doi.org/10.5281/zenodo.20006389
 - [Component-level structure](#component-level-structure)
 - [Value of the data and reuse potential](#value-of-the-data-and-reuse-potential)
 - [Data-processing workflow](#data-processing-workflow)
+- [Source URL collection](#source-url-collection)
 - [Dataset-size summary](#dataset-size-summary)
 - [Step 1: Minimum-information filtering](#step-1-minimum-information-filtering)
 - [Step 2: Uniqlo colour-variant expansion](#step-2-uniqlo-colour-variant-expansion)
@@ -71,38 +72,31 @@ This unit was chosen because colour, material composition, and product details c
 | Item | Description |
 |---|---|
 | Subject area | Environmental science; industrial ecology; circular economy; textile recycling |
-| Specific subject area | Garment-level retailer web data for textile sorting, preprocessing, and fibre-to-fibre recycling analysis |
-| Type of data | Processed JSONL dataset; Python preprocessing scripts; CSV mapping and rule tables; TXT processing summaries |
+| Specific subject area | Garment-level retailer web data for textile sorting, textile pre-processing, and fibre-to-fibre recycling analysis |
+| Type of data | Processed JSONL dataset; Python scripts; CSV mapping and rule tables; TXT processing summaries |
 | Data source | Publicly accessible H&M and Uniqlo product pages from the United Kingdom and Australia |
+| URL collection method | Product URLs were collected from publicly accessible listing endpoints used by retailer product-listing pages |
 | Data collection period | URL collection: 24–26 March 2026; product-detail scraping: 24 March–8 April 2026 |
 | Unit of analysis | Colour-specific garment variant |
 | Final dataset | `6_JSONL_component_normalized.jsonl`, archived in the Zenodo release |
 | Number of final records | 47,522 garment variants |
-| GitHub repository contents | Documentation, preprocessing scripts, mapping tables, and processing summaries |
+| GitHub repository contents | Documentation, Python scripts used for dataset construction, mapping tables, and processing summaries |
 | Zenodo release contents | Complete archived dataset release, including the final JSONL dataset file |
-| Data accessibility | The complete archived version will be released through Zenodo with a persistent DOI |
+| Data accessibility | The complete archived version is available through Zenodo with a persistent DOI |
 
 ## Schematic overview of dataset construction
 
-The figure below summarizes how the final garment-variant dataset was generated from retailer product-page records through six preprocessing steps.
+The figure below summarizes how the final garment-variant dataset was generated from retailer product-page records through six dataset-construction steps.
 
-```mermaid
-flowchart TD
-    A["Raw scraped product-page records: 47,834 rows"] --> B["Step 1: Minimum-information filtering; output: 47,570 rows"]
-    B --> C1["H&M cleaned records: 44,977 rows"]
-    B --> C2["Uniqlo cleaned records: 2,593 rows"]
-    C2 --> D["Step 2: Uniqlo colour-variant expansion; output: 7,017 variant rows"]
-    C1 --> E["Step 3: Cross-retailer schema harmonization"]
-    D --> E
-    E --> F["3_JSONL_harmonized.jsonl: 51,994 rows"]
-    F --> G["Step 4: Material-name normalization; output: 51,994 rows"]
-    G --> H["Step 5: Category normalization and scope filtering; output: 48,244 rows"]
-    H --> I["Step 6: Component normalization and consistency filtering; output: 47,522 rows"]
-    I --> J["Final released dataset: 6_JSONL_component_normalized.jsonl"]
-    J --> K["Input for sorting and preprocessing/disruptor analyses"]
+![Schematic overview of dataset construction](workflow_dataset_construction.png)
+
+This workflow shows how raw retailer product-page records were transformed into the final curated dataset `6_JSONL_component_normalized.jsonl`. The dataset-construction pipeline first removes records lacking the minimum material-colour information needed for analysis, then expands Uniqlo records to colour-specific variants, harmonizes H&M and Uniqlo records into a common schema, normalizes material names, assigns a harmonized garment-category taxonomy, and finally parses and normalizes component-level composition information.
+
+The editable vector version of this schematic is also provided as:
+
+```text
+workflow_dataset_construction.svg
 ```
-
-This workflow shows how raw retailer product-page records were transformed into the final curated dataset `6_JSONL_component_normalized.jsonl`. The preprocessing pipeline first removes records lacking the minimum material-colour information needed for analysis, then expands Uniqlo records to colour-specific variants, harmonizes H&M and Uniqlo records into a common schema, normalizes material names, assigns a harmonized garment-category taxonomy, and finally parses and normalizes component-level composition information.
 
 ## Repository purpose
 
@@ -111,13 +105,13 @@ This repository documents how raw retailer product-page records were transformed
 The repository is intended to support:
 
 - automated textile sorting research;
-- textile preprocessing and feedstock-preparation analysis;
+- textile pre-processing and feedstock-preparation analysis;
 - garment-level fibre composition analysis;
 - analysis of garment components, linings, trims, and secondary structures;
 - fibre-to-fibre recycling-barrier assessment;
 - reproducible use of retailer web data for textile circularity research.
 
-The GitHub repository provides the maintained documentation and preprocessing workflow. The complete archived dataset release is provided on Zenodo. This project is **not** a redistribution or mirror of retailer webpages.
+The GitHub repository provides the maintained documentation and dataset-construction workflow. The complete archived dataset release is provided on Zenodo. This project is **not** a redistribution or mirror of retailer webpages.
 
 ## Data source and accessibility
 
@@ -130,10 +124,11 @@ All harmonized records retain two timestamps:
 ```text
 url_collected_at
 scraped_at
+```
 
 URL collection occurred between **24 and 26 March 2026**, while product-detail scraping was completed between **24 March and 8 April 2026**. Although detailed scraping took place over a longer period, it was applied to a fixed URL pool, reducing the risk of mixing products from changing online assortments.
 
-The complete archived release of this dataset will be deposited on Zenodo.
+The complete archived release of this dataset is deposited on Zenodo:
 
 ```text
 Repository: Zenodo
@@ -141,7 +136,7 @@ DOI: 10.5281/zenodo.20006389
 Direct URL: https://doi.org/10.5281/zenodo.20006389
 ```
 
-The GitHub repository contains the maintained documentation, preprocessing scripts, mapping tables, and processing summaries. The Zenodo release contains the complete archived package, including the final dataset file:
+The GitHub repository contains the maintained documentation, Python scripts used for dataset construction, mapping tables, and processing summaries. The Zenodo release contains the complete archived package, including the final dataset file:
 
 ```text
 6_JSONL_component_normalized.jsonl
@@ -149,7 +144,7 @@ The GitHub repository contains the maintained documentation, preprocessing scrip
 
 ## Repository contents
 
-The GitHub repository includes the public-release documentation, preprocessing scripts, mapping tables, and summary files. The complete Zenodo release additionally includes the final curated dataset file:
+The GitHub repository includes the public-release documentation, Python scripts used for dataset construction, mapping tables, summary files, and workflow schematic. The complete Zenodo release additionally includes the final curated dataset file:
 
 ```text
 6_JSONL_component_normalized.jsonl
@@ -159,6 +154,12 @@ The GitHub repository includes:
 
 ```text
 README.md
+LICENSE
+LICENSE-DATA.md
+CITATION.cff
+
+workflow_dataset_construction.png
+workflow_dataset_construction.svg
 
 1_JSONL_drop_empty_summary.py
 2_JSONL_uniqlo_variants_expansion.py
@@ -189,6 +190,8 @@ The public release does not redistribute product images, model images, screensho
 |---|---|
 | `README.md` | Main documentation for the dataset, processing workflow, released files, and reuse potential |
 | `6_JSONL_component_normalized.jsonl` | Final curated garment-variant dataset used as the direct input for the sorting and preprocessing/disruptor analyses. This file is included in the Zenodo release rather than uploaded directly to GitHub because of file-size constraints |
+| `workflow_dataset_construction.png` | Static workflow schematic used for display in the README and Zenodo record |
+| `workflow_dataset_construction.svg` | Editable/vector version of the workflow schematic |
 | `1_JSONL_drop_empty_summary.py` | Script for filtering raw product-page records with missing material or colour information |
 | `2_JSONL_uniqlo_variants_expansion.py` | Script for expanding Uniqlo product-page records into colour-specific variant rows |
 | `3_JSONL_key_harmonization.py` | Script for harmonizing H&M and Uniqlo records into a common schema |
@@ -286,19 +289,19 @@ Each entry in `materials` contains:
 
 - The dataset provides garment-variant-level information on material composition, colour, product category, and component structure for two major fast-fashion retailers across two regional markets.
 
-- The dataset can be reused to evaluate textile sorting compatibility, preprocessing requirements, and potential barriers to fibre-to-fibre recycling using transparent rule-based or alternative analytical frameworks.
+- The dataset can be reused to evaluate textile sorting compatibility, textile pre-processing requirements, and potential barriers to fibre-to-fibre recycling using transparent rule-based or alternative analytical frameworks.
 
 - The normalized material, category, and component fields allow researchers to compare heterogeneous retailer-disclosed product information across brands, regions, garment types, and colour variants.
 
 - The structured component-level representation can support further work on garment complexity, linings, trims, pocket structures, coatings, and other features relevant to textile circularity.
 
-- The preprocessing scripts, CSV mapping tables, and TXT summary files provide an auditable workflow from retailer product-page records to an analysis-ready JSONL dataset.
+- The Python scripts, CSV mapping tables, and TXT summary files provide an auditable workflow from retailer product-page records to an analysis-ready JSONL dataset.
 
 - The dataset may also support future comparative work with other retailers, markets, or time periods, provided that new product-page data are transformed into a compatible schema.
 
 ## Data-processing workflow
 
-The dataset was produced through six sequential preprocessing steps:
+The dataset was produced through six sequential dataset-construction steps after data acquisition:
 
 1. minimum-information filtering;
 2. Uniqlo colour-variant expansion;
@@ -317,6 +320,16 @@ The scripts are numbered according to this workflow:
 5_JSONL_category_normalization.py
 6_JSONL_component_normalization.py
 ```
+
+The retailer-specific acquisition scripts used to collect source URLs and product-page records are not included in this release. The archived release focuses on the curated dataset and the Python scripts used for dataset construction after data acquisition.
+
+## Source URL collection
+
+Before the numbered dataset-construction workflow, product URLs were collected from the publicly accessible listing endpoints used by the H&M and Uniqlo product-listing pages. URL collection was performed separately for each retailer-region website and for the in-scope clothing categories. This endpoint-based collection strategy was used instead of manual visual pagination because it provided a systematic way to retrieve the product records returned by the retailer listing pages at the time of collection.
+
+The resulting URL pool defined the fixed product assortment used for subsequent product-detail scraping. The dataset should therefore be interpreted as a fixed snapshot of product records returned for the in-scope clothing categories during the URL-collection window, rather than as a continuously updated representation of each retailer’s full online catalogue.
+
+The retailer-specific acquisition scripts are not included in this release. This is because the archived release focuses on the curated analytical dataset and downstream dataset-construction workflow, and because retailer website structures and listing endpoints are time-sensitive and may change. The released files provide the final curated dataset, Python scripts used for dataset construction after data acquisition, mapping tables, and processing summaries.
 
 ## Dataset-size summary
 
@@ -673,7 +686,7 @@ The summary file for this step is:
 
 ## Raw and processed data availability
 
-The final curated dataset file `6_JSONL_component_normalized.jsonl` is archived in the Zenodo release rather than tracked directly in the GitHub repository because of file-size constraints. The GitHub repository contains the preprocessing scripts, mapping tables, processing summaries, and documentation needed to understand and reuse the dataset.
+The final curated dataset file `6_JSONL_component_normalized.jsonl` is archived in the Zenodo release rather than tracked directly in the GitHub repository because of file-size constraints. The GitHub repository contains the Python scripts used for dataset construction, mapping tables, processing summaries, and documentation needed to understand and reuse the dataset.
 
 The Zenodo release is the complete archived dataset record. It includes:
 
@@ -683,7 +696,7 @@ The Zenodo release is the complete archived dataset record. It includes:
 
 and the same documentation, scripts, mapping tables, and processing summaries provided in the GitHub repository.
 
-This repository releases the curated, analysis-ready dataset rather than the full raw scraped webpage records. The full raw scraped files are not redistributed because they may contain unnecessary third-party webpage content, including long-form retailer descriptions, image-related metadata, review-related fields, or other commercial webpage material not required for reproducing the analytical dataset.
+This repository releases the curated, analysis-ready dataset rather than the full raw scraped webpage records. The full raw scraped files and retailer-specific acquisition scripts are not redistributed because they may contain unnecessary third-party webpage content, time-sensitive endpoint details, image-related metadata, review-related fields, or other commercial webpage material not required for reproducing the analytical dataset.
 
 Product-page URLs and scrape timestamps are retained in the curated dataset to support provenance and allow users to trace the source records where pages remain available.
 
@@ -699,7 +712,7 @@ is the shared empirical input for two related analyses.
 
 The sorting-compatibility analysis uses normalized material, colour, category, and component fields to evaluate sorting-relevant barriers.
 
-The preprocessing/disruptor analysis uses the same final dataset to identify garment features that may complicate preprocessing and fibre-to-fibre recycling, including hardware, trims, decorative or non-textile attachments, surface coatings or prints, linings, multilayer structures, and secondary components.
+The preprocessing/disruptor analysis uses the same final dataset to identify garment features that may complicate textile pre-processing and fibre-to-fibre recycling, including hardware, trims, decorative or non-textile attachments, surface coatings or prints, linings, multilayer structures, and secondary components.
 
 Study-specific rule outputs are generated from the final component-normalized dataset rather than from the raw scraped records.
 
@@ -718,7 +731,8 @@ The public release does not redistribute:
 - full webpage captures;
 - direct image URLs;
 - review text;
-- unnecessary commercial metadata.
+- unnecessary commercial metadata;
+- retailer-specific acquisition scripts.
 
 Retailer-facing description and function fields are retained only where they support reproducibility, category assignment, or downstream rule validation. Product images, raw HTML, review text, and full webpage captures are not redistributed.
 
@@ -730,7 +744,7 @@ Some garment features may be missing if they were not disclosed by the retailer 
 
 The normalized material, category, and component fields are rule-based analytical constructs. They are designed to make heterogeneous retailer information comparable across brands and regions, but they do not replace physical inspection.
 
-The dataset represents a fixed online product assortment defined by the URL-collection and product-detail scraping timestamps. Product pages may have changed after the recorded scrape dates.
+The dataset represents a fixed online product assortment defined by the URL-collection and product-detail scraping timestamps. Product pages may have changed after the recorded scrape dates. Because the URL pool was defined from retailer listing endpoints, the dataset should be interpreted as covering the product records returned for the in-scope clothing categories at the time of URL collection, not as a continuously updated catalogue of all possible products.
 
 The dataset supports reproducible assessment of potential sorting and preprocessing barriers, but it does not directly measure industrial sorting outcomes, preprocessing efficiency, or realized fibre-to-fibre recycling performance.
 
@@ -738,11 +752,11 @@ The dataset supports reproducible assessment of potential sorting and preprocess
 
 This research was supported by the Werner Siemens Foundation through the WSS Research Centre Catalaix, a Project of the Century funded by the Werner Siemens Foundation.
 
-The dataset was prepared by [Dr. Kai Li](https://www.om.rwth-aachen.de/gruppenleitung/kai-li/) at the Chair of Operations Management, RWTH Aachen University, with academic guidance from [Prof. Grit Walther](https://www.om.rwth-aachen.de/lehrstuhlleitung/prof-dr-grit-walther/?setlang=en).
+The dataset was prepared by [Dr. Kai Li](https://www.om.rwth-aachen.de/gruppenleitung/kai-li/) and [Prof. Grit Walther](https://www.om.rwth-aachen.de/lehrstuhlleitung/prof-dr-grit-walther/?setlang=en) at the Chair of Operations Management, RWTH Aachen University.
 
 ## Ethics statement
 
-This dataset was derived from publicly accessible retailer product-page information. The work did not involve human subjects, animal experiments, or data collected from social media platforms. Product reviews, user-generated content, product images, screenshots, raw HTML, and full webpage captures are not redistributed in the public release.
+This dataset was derived from publicly accessible retailer product-page information. The work did not involve human subjects, animal experiments, or data collected from social media platforms. Product reviews, user-generated content, product images, screenshots, raw HTML, full webpage captures, and retailer-specific acquisition scripts are not redistributed in the public release.
 
 ## Recommended citation
 
@@ -758,4 +772,4 @@ Source code and scripts are licensed under the MIT License. See `LICENSE`.
 
 Dataset files, derived tables, documentation, and metadata are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0), unless otherwise stated. See `LICENSE-DATA.md`.
 
-The dataset was derived from publicly accessible retailer product-page information. The public release does not redistribute product images, screenshots, raw HTML, review text, or full webpage captures. The above licenses apply only to the curated dataset, documentation, and code included in this repository and the associated Zenodo release.
+The dataset was derived from publicly accessible retailer product-page information. The public release does not redistribute product images, screenshots, raw HTML, review text, full webpage captures, or retailer-specific acquisition scripts. The above licenses apply only to the curated dataset, documentation, and code included in this repository and the associated Zenodo release.
