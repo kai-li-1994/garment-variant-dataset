@@ -88,7 +88,30 @@ This unit was chosen because colour, material composition, and product details c
 
 The figure below summarizes how the final garment-variant dataset was generated from retailer product-page records through six dataset-construction steps.
 
-![Schematic overview of dataset construction](workflow_dataset_construction.png)
+```mermaid
+flowchart TD
+    A["Raw scraped product-page records<br/>47,834 rows"] --> B["Step 1<br/>Minimum-information filtering<br/>47,570 rows"]
+
+    B --> C1["H&M cleaned records<br/>44,977 rows"]
+    B --> C2["Uniqlo cleaned records<br/>2,593 rows"]
+
+    C2 --> D["Step 2<br/>Uniqlo colour-variant expansion<br/>7,017 variant rows"]
+
+    C1 --> E["Step 3<br/>Cross-retailer schema harmonization"]
+    D --> E
+
+    E --> F["3_JSONL_harmonized.jsonl<br/>51,994 rows"]
+
+    F --> G["Step 4<br/>Material-name normalization<br/>51,994 rows"]
+
+    G --> H["Step 5<br/>Category normalization and scope filtering<br/>48,244 rows"]
+
+    H --> I["Step 6<br/>Component normalization and consistency filtering<br/>47,522 rows"]
+
+    I --> J["Final released dataset<br/>6_JSONL_component_normalized.jsonl<br/>47,522 garment variants"]
+
+    J --> K["Direct input for<br/>sorting-compatibility analysis<br/>and preprocessing/disruptor analysis"]
+```
 
 This workflow shows how raw retailer product-page records were transformed into the final curated dataset `6_JSONL_component_normalized.jsonl`. The dataset-construction pipeline first removes records lacking the minimum material-colour information needed for analysis, then expands Uniqlo records to colour-specific variants, harmonizes H&M and Uniqlo records into a common schema, normalizes material names, assigns a harmonized garment-category taxonomy, and finally parses and normalizes component-level composition information.
 
