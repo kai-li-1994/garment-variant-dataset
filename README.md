@@ -123,12 +123,13 @@ The GitHub repository provides the maintained documentation and preprocessing wo
 
 The dataset was derived from publicly accessible online product pages of H&M and Uniqlo in the United Kingdom and Australia.
 
-To reduce temporal inconsistency in the product pool, URL collection and product-detail scraping were separated. Product URLs were first collected within a concentrated time window for each retailer-region website, defining the product assortment before detailed product information was extracted. All harmonized records retain two timestamps:
+To reduce temporal inconsistency in the product pool, URL collection and product-detail scraping were separated. Product URLs were first collected within a concentrated time window for each retailer-region website, defining the product assortment before detailed product information was extracted. Rather than relying on manual browsing or page-by-page visual pagination, product URLs were collected from the publicly accessible listing endpoints used by the retailer product-listing pages. This approach allowed the URL pool to cover the product records returned for the in-scope clothing categories on each retailer-region website at the time of collection.
+
+All harmonized records retain two timestamps:
 
 ```text
 url_collected_at
 scraped_at
-```
 
 URL collection occurred between **24 and 26 March 2026**, while product-detail scraping was completed between **24 March and 8 April 2026**. Although detailed scraping took place over a longer period, it was applied to a fixed URL pool, reducing the risk of mixing products from changing online assortments.
 
