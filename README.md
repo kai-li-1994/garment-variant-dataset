@@ -329,8 +329,6 @@ Before the numbered dataset-construction workflow, product URLs were collected f
 
 The resulting URL pool defined the fixed product assortment used for subsequent product-detail scraping. The dataset should therefore be interpreted as a fixed snapshot of product records returned for the in-scope clothing categories during the URL-collection window, rather than as a continuously updated representation of each retailer’s full online catalogue.
 
-The retailer-specific acquisition scripts are not included in this release. This is because the archived release focuses on the curated analytical dataset and downstream dataset-construction workflow, and because retailer website structures and listing endpoints are time-sensitive and may change. The released files provide the final curated dataset, Python scripts used for dataset construction after data acquisition, mapping tables, and processing summaries.
-
 ## Dataset-size summary
 
 | Step | Input records | Removed / unresolved records | Output records | Main purpose |
