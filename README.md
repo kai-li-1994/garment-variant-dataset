@@ -1,20 +1,20 @@
-# Harmonized garment-variant dataset for textile sorting and fibre-to-fibre recycling analysis
+# A harmonized fast-fashion garment-variant dataset for textile circularity and sustainability assessment
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281%2Fzenodo.20006389.svg)](https://doi.org/10.5281/zenodo.20006389)
 
 This repository contains the documentation, Python scripts used for dataset construction, mapping tables, and processing summaries for a curated garment-variant dataset derived from publicly accessible online product pages of H&M and Uniqlo in the United Kingdom and Australia.
 
-The dataset was developed to support garment-level analysis of textile sorting compatibility, textile pre-processing requirements, and potential barriers to fibre-to-fibre recycling. It provides harmonized information on product identifiers, retailer region, colour-specific variants, material composition, normalized material names, normalized garment categories, normalized component structures, and derived analytical inputs.
+The dataset was developed to support garment-level textile circularity assessment, with particular relevance for textile sorting compatibility, textile pre-processing requirements, garment-construction barriers, and potential barriers to fibre-to-fibre recycling. It provides harmonized information on product identifiers, retailer region, colour-specific variants, material composition, normalized material names, normalized garment categories, normalized component structures, and derived analytical inputs.
 
 The final dataset file archived in the Zenodo release is:
 
 ```text
-6_JSONL_component_normalized.jsonl
+6_JSONL_component_normalized_public.jsonl
 ```
 
-This file contains **47,522 colour-specific garment variants** and is the direct input used for the associated textile sorting and preprocessing/disruptor analyses.
+This file contains **47,522 colour-specific garment variants** and is the public dataset used for the associated Resources, Conservation and Recycling co-submission on garment construction, textile sorting barriers, and fibre-to-fibre recycling disruptors. It was derived from the component-normalized processing output `6_JSONL_component_normalized.jsonl` by removing the non-essential consumer-engagement fields `rating` and `reviewCount` from all records.
 
-The GitHub repository does not directly include `6_JSONL_component_normalized.jsonl` because of file-size constraints. The complete archived dataset release, including this JSONL file, is available on Zenodo:
+The GitHub repository does not directly include `6_JSONL_component_normalized_public.jsonl` because of file-size constraints. The complete archived dataset release, including this public JSONL file and the public curation summary, is available on Zenodo:
 
 ```text
 https://doi.org/10.5281/zenodo.20006389
@@ -43,7 +43,7 @@ https://doi.org/10.5281/zenodo.20006389
 - [Step 5: Category normalization and scope filtering](#step-5-category-normalization-and-scope-filtering)
 - [Step 6: Component normalization and consistency filtering](#step-6-component-normalization-and-consistency-filtering)
 - [Raw and processed data availability](#raw-and-processed-data-availability)
-- [Relationship to sorting and preprocessing analyses](#relationship-to-sorting-and-preprocessing-analyses)
+- [Relationship to the associated RCR disruptor analysis](#relationship-to-the-associated-rcr-disruptor-analysis)
 - [Public-release curation](#public-release-curation)
 - [Limitations](#limitations)
 - [Acknowledgements](#acknowledgements)
@@ -63,6 +63,8 @@ The geographic scope covers retailer websites in:
 - United Kingdom
 - Australia
 
+H&M and Uniqlo were selected because their parent companies, H&M Group and Fast Retailing, rank among the largest global apparel manufacturers and retailers by annual sales after Inditex/Zara, while also providing structured online product information suitable for scalable garment-level analysis. The United Kingdom and Australia portals were selected to capture seasonal variation across Northern and Southern Hemisphere retail markets. This selection should be interpreted as a structured product-level snapshot of two major fast-fashion retailers across two seasonally contrasting regional markets, not as a statistically representative sample of all fast fashion.
+
 The dataset includes men’s, women’s, and children’s clothing. The analytical unit is the **colour-specific garment variant**, rather than the original product-page record.
 
 This unit was chosen because colour, material composition, and product details can differ across variants of the same nominal product. These differences are relevant for sorting and recycling analysis, especially where colour, fibre composition, or component-level construction influences the interpretation of a garment.
@@ -72,16 +74,16 @@ This unit was chosen because colour, material composition, and product details c
 | Item | Description |
 |---|---|
 | Subject area | Environmental science; industrial ecology; circular economy; textile recycling |
-| Specific subject area | Garment-level retailer web data for textile sorting, textile pre-processing, and fibre-to-fibre recycling analysis |
+| Specific subject area | Garment-level retailer web data for textile circularity, sorting, and recycling assessment |
 | Type of data | Processed JSONL dataset; Python scripts; CSV mapping and rule tables; TXT processing summaries |
 | Data source | Publicly accessible H&M and Uniqlo product pages from the United Kingdom and Australia |
 | URL collection method | Product URLs were collected from publicly accessible listing endpoints used by retailer product-listing pages |
 | Data collection period | URL collection: 24–26 March 2026; product-detail scraping: 24 March–8 April 2026 |
 | Unit of analysis | Colour-specific garment variant |
-| Final dataset | `6_JSONL_component_normalized.jsonl`, archived in the Zenodo release |
+| Final public dataset | `6_JSONL_component_normalized_public.jsonl`, archived in the Zenodo release |
 | Number of final records | 47,522 garment variants |
 | GitHub repository contents | Documentation, Python scripts used for dataset construction, mapping tables, and processing summaries |
-| Zenodo release contents | Complete archived dataset release, including the final JSONL dataset file |
+| Zenodo release contents | Complete archived dataset release, including the final public JSONL dataset file and public curation summary |
 | Data accessibility | The complete archived version is available through Zenodo with a persistent DOI |
 
 ## Schematic overview of dataset construction
@@ -108,12 +110,14 @@ flowchart TD
 
     H --> I["Step 6<br/>Component normalization and consistency filtering<br/>47,522 rows"]
 
-    I --> J["Final released dataset<br/>6_JSONL_component_normalized.jsonl<br/>47,522 garment variants"]
+    I --> J["Public-release curation<br/>remove rating and reviewCount<br/>47,522 rows"]
 
-    J --> K["Direct input for<br/>sorting-compatibility analysis<br/>and preprocessing/disruptor analysis"]
+    J --> K["Final public released dataset<br/>6_JSONL_component_normalized_public.jsonl<br/>47,522 garment variants"]
+
+    K --> L["Direct input for<br/>RCR garment-construction disruptor analysis"]
 ```
 
-This workflow shows how raw retailer product-page records were transformed into the final curated dataset `6_JSONL_component_normalized.jsonl`. The dataset-construction pipeline first removes records lacking the minimum material-colour information needed for analysis, then expands Uniqlo records to colour-specific variants, harmonizes H&M and Uniqlo records into a common schema, normalizes material names, assigns a harmonized garment-category taxonomy, and finally parses and normalizes component-level composition information.
+This workflow shows how raw retailer product-page records were transformed into the final public curated dataset `6_JSONL_component_normalized_public.jsonl`. The dataset-construction pipeline first removes records lacking the minimum material-colour information needed for analysis, then expands Uniqlo records to colour-specific variants, harmonizes H&M and Uniqlo records into a common schema, normalizes material names, assigns a harmonized garment-category taxonomy, parses and normalizes component-level composition information, and finally removes the non-essential consumer-engagement fields `rating` and `reviewCount` for the public release.
 
 The editable vector version of this schematic is also provided as:
 
@@ -132,6 +136,7 @@ The repository is intended to support:
 - garment-level fibre composition analysis;
 - analysis of garment components, linings, trims, and secondary structures;
 - fibre-to-fibre recycling-barrier assessment;
+- garment-construction and removable-disruptor analysis;
 - reproducible use of retailer web data for textile circularity research.
 
 The GitHub repository provides the maintained documentation and dataset-construction workflow. The complete archived dataset release is provided on Zenodo. This project is **not** a redistribution or mirror of retailer webpages.
@@ -162,15 +167,16 @@ Direct URL: https://doi.org/10.5281/zenodo.20006389
 The GitHub repository contains the maintained documentation, Python scripts used for dataset construction, mapping tables, and processing summaries. The Zenodo release contains the complete archived package, including the final dataset file:
 
 ```text
-6_JSONL_component_normalized.jsonl
+6_JSONL_component_normalized_public.jsonl
 ```
 
 ## Repository contents
 
-The GitHub repository includes the public-release documentation, Python scripts used for dataset construction, mapping tables, summary files, and workflow schematic. The complete Zenodo release additionally includes the final curated dataset file:
+The GitHub repository includes the public-release documentation, Python scripts used for dataset construction, mapping tables, summary files, and workflow schematic. The complete Zenodo release additionally includes the final public curated dataset file and its curation summary:
 
 ```text
-6_JSONL_component_normalized.jsonl
+6_JSONL_component_normalized_public.jsonl
+6_JSONL_component_normalized_public_summary.txt
 ```
 
 The GitHub repository includes:
@@ -203,16 +209,17 @@ workflow_dataset_construction.svg
 4_JSONL_material_normalization_summary.txt
 5_JSONL_category_normalized_summary.txt
 6_JSONL_component_normalized_summary.txt
+6_JSONL_component_normalized_public_summary.txt
 ```
 
-The public release does not redistribute product images, model images, screenshots, raw HTML, full webpage captures, review text, or unnecessary commercial webpage material.
+The public release does not redistribute product images, model images, screenshots, raw HTML, full webpage captures, review text, product ratings, review counts, or unnecessary commercial webpage material.
 
 ## File inventory
 
 | File | Description |
 |---|---|
 | `README.md` | Main documentation for the dataset, processing workflow, released files, and reuse potential |
-| `6_JSONL_component_normalized.jsonl` | Final curated garment-variant dataset used as the direct input for the sorting and preprocessing/disruptor analyses. This file is included in the Zenodo release rather than uploaded directly to GitHub because of file-size constraints |
+| `6_JSONL_component_normalized_public.jsonl` | Final public curated garment-variant dataset used as the direct input for the associated Resources, Conservation and Recycling garment-construction/disruptor analysis. This file contains 47,522 colour-specific garment variants and excludes `rating` and `reviewCount`. It is included in the Zenodo release rather than uploaded directly to GitHub because of file-size constraints |
 | `workflow_dataset_construction.png` | Static workflow schematic used for display in the README and Zenodo record |
 | `workflow_dataset_construction.svg` | Editable/vector version of the workflow schematic |
 | `1_JSONL_drop_empty_summary.py` | Script for filtering raw product-page records with missing material or colour information |
@@ -232,16 +239,17 @@ The public release does not redistribute product images, model images, screensho
 | `4_JSONL_material_normalization_summary.txt` | Summary of material normalization, including row counts and number of changed normalized material-text records |
 | `5_JSONL_category_normalized_summary.txt` | Summary of category normalization, scope filtering, parent/detail category counts, and rule-source counts |
 | `6_JSONL_component_normalized_summary.txt` | Summary of component normalization, row filtering, component counts, and component-normalization diagnostics |
+| `6_JSONL_component_normalized_public_summary.txt` | Summary of public-release curation, documenting that `rating` and `reviewCount` were removed from all 47,522 records while preserving all research-relevant fields |
 | `LICENSE` | MIT license for source code and scripts |
 | `LICENSE-DATA.md` | CC BY 4.0 license statement for dataset files, derived tables, documentation, and metadata, unless otherwise stated |
 | `CITATION.cff` | Citation metadata file for GitHub and Zenodo citation support |
 
 ## Final dataset
 
-The final processed dataset is:
+The final public processed dataset is:
 
 ```text
-6_JSONL_component_normalized.jsonl
+6_JSONL_component_normalized_public.jsonl
 ```
 
 Each line is one JSON object representing one colour-specific garment variant.
@@ -252,11 +260,11 @@ The final dataset contains:
 47,522 garment-variant records
 ```
 
-The final records include harmonized product metadata, normalized material text, normalized garment categories, and structured component-level composition information.
+The final public records include harmonized product metadata, normalized material text, normalized garment categories, and structured component-level composition information. The file was derived from the component-normalized processing output `6_JSONL_component_normalized.jsonl` by removing `rating` and `reviewCount` from all 47,522 records.
 
-Because of file-size constraints, `6_JSONL_component_normalized.jsonl` is archived in the Zenodo release rather than tracked directly in the GitHub repository.
+Because of file-size constraints, `6_JSONL_component_normalized_public.jsonl` is archived in the Zenodo release rather than tracked directly in the GitHub repository.
 
-## Key fields in the final dataset
+## Key fields in the final public dataset
 
 | Field | Description |
 |---|---|
@@ -276,8 +284,6 @@ Because of file-size constraints, `6_JSONL_component_normalized.jsonl` is archiv
 | `composition_assignment_type` | Method used to assign material-composition information to the colour variant |
 | `raw_description_text` | Retailer-facing product description text retained in the working schema where available |
 | `raw_function_text` | Retailer-facing structured function or attribute text where available |
-| `rating` | Retailer-disclosed product rating where available |
-| `reviewCount` | Retailer-disclosed review count where available |
 | `raw_material_text_norm` | Material-composition text after material-name normalization |
 | `detail_category` | Harmonized detailed garment category |
 | `detail_rule_source` | Field source used for category-rule assignment |
@@ -331,7 +337,8 @@ The dataset was produced through six sequential dataset-construction steps after
 3. cross-retailer schema harmonization;
 4. material-name normalization;
 5. category normalization and scope filtering;
-6. component normalization and consistency filtering.
+6. component normalization and consistency filtering;
+7. public-release curation.
 
 The scripts are numbered according to this workflow:
 
@@ -363,7 +370,8 @@ The resulting URL pool defined the fixed product assortment used for subsequent 
 | Material normalization | 51,994 | 0 | 51,994 | Add canonical material labels while preserving original material text |
 | Category normalization and scope filtering | 51,994 | 3,750 removed | 48,244 | Assign harmonized garment categories and remove out-of-scope records |
 | Component normalization and consistency filtering | 48,244 | 722 removed | 47,522 | Parse component-level composition and remove inconsistent records |
-| Final analysis dataset | 47,522 | — | 47,522 | Direct input for sorting and preprocessing analyses |
+| Component-normalized processing output | 47,522 | — | 47,522 | Internal processing output before public-release curation |
+| Final public dataset | 47,522 | 0 records removed; `rating` and `reviewCount` removed from all records | 47,522 | Direct input for the associated RCR garment-construction/disruptor analysis |
 
 ## Step 1: Minimum-information filtering
 
@@ -628,7 +636,7 @@ The input file was:
 The output file was:
 
 ```text
-6_JSONL_component_normalized.jsonl
+6_JSONL_component_normalized_public.jsonl
 ```
 
 The component-normalization script reads the material-normalized field:
@@ -703,39 +711,61 @@ The summary file for this step is:
 
 ```text
 6_JSONL_component_normalized_summary.txt
+6_JSONL_component_normalized_public_summary.txt
 ```
+
+## Step 7: Public-release curation
+
+The final public dataset was produced from the component-normalized processing output by removing non-essential consumer-engagement fields before release. Specifically, the fields `rating` and `reviewCount` were removed from all 47,522 records. No records were removed during this public-release curation step, and the final public file still contains 47,522 colour-specific garment variants.
+
+The output file for public release is:
+
+```text
+6_JSONL_component_normalized_public.jsonl
+```
+
+The curation summary is:
+
+```text
+6_JSONL_component_normalized_public_summary.txt
+```
+
+This step aligns the released dataset with the repository’s public-release curation policy. The public file retains source URLs, timestamps, product identifiers, product names, colour labels, material-composition fields, normalized material fields, normalized categories, and structured component records, while excluding product ratings and review counts.
 
 ## Raw and processed data availability
 
-The final curated dataset file `6_JSONL_component_normalized.jsonl` is archived in the Zenodo release rather than tracked directly in the GitHub repository because of file-size constraints. The GitHub repository contains the Python scripts used for dataset construction, mapping tables, processing summaries, and documentation needed to understand and reuse the dataset.
+The final public curated dataset file `6_JSONL_component_normalized_public.jsonl` is archived in the Zenodo release rather than tracked directly in the GitHub repository because of file-size constraints. The GitHub repository contains the Python scripts used for dataset construction, mapping tables, processing summaries, and documentation needed to understand and reuse the dataset.
 
 The Zenodo release is the complete archived dataset record. It includes:
 
 ```text
-6_JSONL_component_normalized.jsonl
+6_JSONL_component_normalized_public.jsonl
+6_JSONL_component_normalized_public_summary.txt
 ```
 
 and the same documentation, scripts, mapping tables, and processing summaries provided in the GitHub repository.
 
-This repository releases the curated, analysis-ready dataset rather than the full raw scraped webpage records. The full raw scraped files and retailer-specific acquisition scripts are not redistributed because they may contain unnecessary third-party webpage content, time-sensitive endpoint details, image-related metadata, review-related fields, or other commercial webpage material not required for reproducing the analytical dataset.
+This repository releases the curated, analysis-ready dataset rather than the full raw scraped webpage records. The full raw scraped files and retailer-specific acquisition scripts are not redistributed because they may contain unnecessary third-party webpage content, time-sensitive endpoint details, image-related metadata, review-related fields, product ratings, review counts, or other commercial webpage material not required for reproducing the analytical dataset.
 
 Product-page URLs and scrape timestamps are retained in the curated dataset to support provenance and allow users to trace the source records where pages remain available.
 
-## Relationship to sorting and preprocessing analyses
+## Relationship to the associated RCR disruptor analysis
 
-The final file:
+The final public file:
 
 ```text
-6_JSONL_component_normalized.jsonl
+6_JSONL_component_normalized_public.jsonl
 ```
 
-is the shared empirical input for two related analyses.
+is the empirical input for the associated Resources, Conservation and Recycling co-submission:
 
-The sorting-compatibility analysis uses normalized material, colour, category, and component fields to evaluate sorting-relevant barriers.
+```text
+Garment construction creates overlooked barriers to textile sorting and fibre-to-fibre recycling in fast fashion
+```
 
-The preprocessing/disruptor analysis uses the same final dataset to identify garment features that may complicate textile pre-processing and fibre-to-fibre recycling, including hardware, trims, decorative or non-textile attachments, surface coatings or prints, linings, multilayer structures, and secondary components.
+The associated manuscript uses normalized material, colour, category, and component fields to identify garment features that may complicate textile sorting, pre-processing, and fibre-to-fibre recycling. These features include hardware, trims, decorative or non-textile attachments, surface coatings or prints, linings, multilayer structures, and secondary components.
 
-Study-specific rule outputs are generated from the final component-normalized dataset rather than from the raw scraped records.
+Study-specific rule outputs are generated from the final public component-normalized dataset rather than from the raw scraped records.
 
 ## Public-release curation
 
@@ -752,10 +782,14 @@ The public release does not redistribute:
 - full webpage captures;
 - direct image URLs;
 - review text;
+- product ratings;
+- review counts;
 - unnecessary commercial metadata;
 - retailer-specific acquisition scripts.
 
-Retailer-facing description and function fields are retained only where they support reproducibility, category assignment, or downstream rule validation. Product images, raw HTML, review text, and full webpage captures are not redistributed.
+Retailer-facing description and function fields are retained only where they support reproducibility, category assignment, component parsing, or downstream rule validation. Product images, raw HTML, review text, product ratings, review counts, and full webpage captures are not redistributed.
+
+H&M and Uniqlo are trademarks of their respective owners. The authors are not affiliated with, endorsed by, or sponsored by H&M, H&M Group, Uniqlo, or Fast Retailing. Brand names are used only to identify the source of publicly accessible product-page information.
 
 ## Limitations
 
@@ -777,14 +811,14 @@ The dataset was prepared by [Dr. Kai Li](https://www.om.rwth-aachen.de/gruppenle
 
 ## Ethics statement
 
-This dataset was derived from publicly accessible retailer product-page information. The work did not involve human subjects, animal experiments, or data collected from social media platforms. Product reviews, user-generated content, product images, screenshots, raw HTML, full webpage captures, and retailer-specific acquisition scripts are not redistributed in the public release.
+This dataset was derived from publicly accessible retailer product-page information. The work did not involve human subjects, animal experiments, or data collected from social media platforms. Product reviews, user-generated content, product images, screenshots, raw HTML, full webpage captures, product ratings, review counts, and retailer-specific acquisition scripts are not redistributed in the public release.
 
 ## Recommended citation
 
 If you use this dataset or code, please cite the archived Zenodo release:
 
 ```text
-Li, K., & Walther, G. (2026). Harmonized garment-variant dataset for textile sorting and fibre-to-fibre recycling analysis (1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.20006389
+Li, K., & Walther, G. (2026). A harmonized fast-fashion garment-variant dataset for textile circularity and sustainability assessment (1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.20006389
 ```
 
 ## License
@@ -793,4 +827,9 @@ Source code and scripts are licensed under the MIT License. See `LICENSE`.
 
 Dataset files, derived tables, documentation, and metadata are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0), unless otherwise stated. See `LICENSE-DATA.md`.
 
-The dataset was derived from publicly accessible retailer product-page information. The public release does not redistribute product images, screenshots, raw HTML, review text, full webpage captures, or retailer-specific acquisition scripts. The above licenses apply only to the curated dataset, documentation, and code included in this repository and the associated Zenodo release.
+The dataset was derived from publicly accessible retailer product-page information. The public release does not redistribute product images, screenshots, raw HTML, review text, product ratings, review counts, full webpage captures, or retailer-specific acquisition scripts. The above licenses apply only to the curated dataset, documentation, and code included in this repository and the associated Zenodo release.
+
+
+## Third-party trademarks and source attribution
+
+H&M and Uniqlo are trademarks of their respective owners. H&M Group, Fast Retailing, H&M, and Uniqlo are not affiliated with, endorsed by, or sponsored by this repository or the associated dataset. Brand names are used only to identify the source websites from which publicly accessible product-page information was obtained. The repository licenses apply only to the curated dataset, derived tables, documentation, metadata, and code released by the authors; they do not grant rights to third-party trademarks, retailer website content, product images, webpage design, or other third-party intellectual property.
