@@ -4,7 +4,7 @@ Dataset files, derived tables, documentation, and metadata in this repository an
 
 This applies to, for example:
 
-- `6_JSONL_component_normalized.jsonl`
+- `6_JSONL_component_normalized_public.jsonl`
 - CSV mapping and summary tables
 - TXT processing summaries
 - README documentation
