@@ -14,4 +14,4 @@ You are free to share and adapt the material for any purpose, including commerci
 
 License text: https://creativecommons.org/licenses/by/4.0/
 
-This license applies only to the curated dataset, derived tables, documentation, and metadata released by the authors. It does not apply to third-party retailer webpages, product images, raw HTML, screenshots, review text, or other third-party webpage content, which are not redistributed in this release.
+This license applies only to the public dataset, derived tables, documentation, and metadata released by the authors. It does not apply to third-party retailer webpages, product images, raw HTML, screenshots, review text, or other third-party webpage content, which are not redistributed in this release.
