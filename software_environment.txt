@@ -1,0 +1,10 @@
+Software environment
+
+The final dataset-processing workflow was executed using:
+
+- Python 3.12.11 (conda-forge distribution)
+- pandas 3.0.2
+
+The processing scripts also use Python standard-library modules, including json, re, csv, pathlib, and collections.
+
+The workflow inputs and outputs are plain-text JSONL, CSV, and TXT files.
